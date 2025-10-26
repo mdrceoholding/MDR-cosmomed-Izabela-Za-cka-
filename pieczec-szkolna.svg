@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <!-- Outer circle -->
+  <circle cx="150" cy="150" r="145" fill="none" stroke="#003366" stroke-width="3"/>
+
+  <!-- Inner circle -->
+  <circle cx="150" cy="150" r="130" fill="none" stroke="#003366" stroke-width="2"/>
+
+  <!-- Text path for circular text -->
+  <defs>
+    <path id="circlePath" d="M 150,20 A 130,130 0 1,1 149.99,20"/>
+  </defs>
+
+  <!-- Upper circular text -->
+  <text font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#003366" letter-spacing="4">
+    <textPath href="#circlePath" startOffset="50%" text-anchor="middle">
+      IAM POLAND SP Z O.O.
+    </textPath>
+  </text>
+
+  <!-- Center content -->
+  <g>
+    <!-- Book/Education symbol -->
+    <rect x="110" y="120" width="80" height="60" fill="none" stroke="#003366" stroke-width="2" rx="3"/>
+    <line x1="150" y1="120" x2="150" y2="180" stroke="#003366" stroke-width="2"/>
+    <line x1="130" y1="135" x2="145" y2="135" stroke="#003366" stroke-width="1.5"/>
+    <line x1="130" y1="145" x2="145" y2="145" stroke="#003366" stroke-width="1.5"/>
+    <line x1="130" y1="155" x2="145" y2="155" stroke="#003366" stroke-width="1.5"/>
+    <line x1="155" y1="135" x2="170" y2="135" stroke="#003366" stroke-width="1.5"/>
+    <line x1="155" y1="145" x2="170" y2="145" stroke="#003366" stroke-width="1.5"/>
+    <line x1="155" y1="155" x2="170" y2="155" stroke="#003366" stroke-width="1.5"/>
+  </g>
+
+  <!-- Bottom text -->
+  <text x="150" y="220" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#003366" text-anchor="middle">
+    SZKOŁA
+  </text>
+
+  <!-- Year or additional info (optional) -->
+  <text x="150" y="240" font-family="Arial, sans-serif" font-size="12" fill="#003366" text-anchor="middle">
+    2025
+  </text>
+</svg>
