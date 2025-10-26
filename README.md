@@ -27,19 +27,22 @@ Procedury dokumenty
   - Harmonogram działań
   - Tabela kontroli postępu
 
-#### 4. Kompletny pakiet dokumentów NCKU (NOWOŚĆ!)
+#### 4. Kompletny pakiet dokumentów NCKU IAM Poland 🎯
 📁 **Katalog: `dokumenty-ncku/`**
 
-**15 profesjonalnych szablonów w 4 kategoriach:**
+**21 profesjonalnych dokumentów (szablony + wypełnione wersje) w 4 kategoriach:**
 
 **A. Dokumenty podstawowe** (`szablony-podstawowe/`)
 - `PROTOKOL-PRZEKAZANIA-OBOWIAZKOW.md` - Kompleksowy protokół przekazania
-- `UCHWALA-POWOLANIE-DYREKTORA.md` - Wzór uchwały Zarządu
+- `UCHWALA-POWOLANIE-DYREKTORA.md` - Wzór uchwały Zarządu (szablon)
+- ✅ **`UCHWALA-POWOLANIE-DYREKTORA-WYPELNIONA.md`** - **WYPEŁNIONA prawdziwymi danymi IAM Poland!**
 - `RAPORT-MIESIECZNY.md` - Szablon miesięcznego raportu
 - `UMOWA-WYKLADOWCA.md` - Umowa o współpracy ze wykładowcą
 
 **B. Dokumenty organizacyjne** (`dokumenty-organizacyjne/`)
-- `REGULAMIN-ORGANIZACYJNY-NCKU.md` - Regulamin organizacyjny
+- `REGULAMIN-ORGANIZACYJNY-NCKU.md` - Regulamin organizacyjny (szablon)
+- ✅ **`STATUT-NCKU-IAM-POLAND.md`** - **Statut NCKU z prawdziwymi danymi!**
+- ✅ **`REGULAMIN-FUNDUSZ-MDR-COMPLIANCE.md`** - **Innowacyjny Fundusz MDR!**
 - `ZAKRES-OBOWIAZKOW-DYREKTORA.md` - Zakres obowiązków
 - `STRUKTURA-ORGANIZACYJNA.md` - Schemat organizacyjny z diagramem
 - `PROCEDURY-OPERACYJNE.md` - 8 kluczowych procedur
@@ -50,12 +53,33 @@ Procedury dokumenty
 - `SPRAWOZDANIE-ZARZAD.md` - Sprawozdanie dla Zarządu
 
 **D. Wzory graficzne SVG** (`wzory-graficzne/`)
-- `certyfikat-ukonczenia.svg` - Certyfikat dla uczestników
-- `dyplom.svg` - Dyplom dla programów długoterminowych
-- `logo-ncku.svg` - Logo i pieczęć NCKU
-- `naglowek-firmowy.svg` - Papier firmowy A4
+- `certyfikat-ukonczenia.svg` - Certyfikat (szablon)
+- ✅ **`certyfikat-ncku-iam-poland.svg`** - **Certyfikat z logo i danymi IAM Poland!**
+- `dyplom.svg` - Dyplom (szablon)
+- `logo-ncku.svg` - Logo NCKU (szablon)
+- `naglowek-firmowy.svg` - Papier firmowy (szablon)
+- ✅ **`naglowek-firmowy-iam-poland.svg`** - **Papier firmowy z pełnymi danymi IAM Poland!**
 
 **📖 INDEKS:** `dokumenty-ncku/INDEX.md` - Szczegółowy przewodnik po wszystkich dokumentach
+
+---
+
+### 🏢 DANE FIRMY I NCKU (prawdziwe!)
+
+**IAM Poland Sp. z o.o.**
+- Pełna nazwa: IAM - International Association of Mesotherapy Sp. z o.o.
+- Adres: **ul. Stefana Kołaczkowskiego 4, 30-399 Kraków**
+- KRS: **0001104217** | NIP: **6762668277** | REGON: **528560167**
+- Kapitał: **50.000 PLN** (wpłacony w całości)
+- Prezes: **Dr n. med. Izabela Załęska**
+- Email: **sekretariat@iam-poland.pl**
+
+**NCKU IAM Poland**
+- Nazwa: **Niepubliczne Centrum Kształcenia Ustawicznego IAM Poland**
+- Dyrektor: **Dr n. med. Izabela Załęska**
+- Data rozpoczęcia: **31 marca 2026 r.**
+- Powierzchnia: **280 m²**
+- Specjalizacje: MDR, ISO 13485, Medycyna estetyczna, Fundusz MDR Compliance
 
 ### Jak korzystać z dokumentów
 
@@ -111,4 +135,4 @@ Procedury dokumenty
 ---
 
 **Ostatnia aktualizacja:** 26 października 2025
-**Wersja:** 2.0 (dodano kompletny pakiet dokumentów NCKU)
+**Wersja:** 3.0 (dodano dokumenty wypełnione prawdziwymi danymi IAM Poland + Statut NCKU + Regulamin Funduszu MDR Compliance)

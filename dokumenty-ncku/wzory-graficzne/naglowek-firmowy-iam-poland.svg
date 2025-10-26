@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297">
+  <!-- Format A4 - nagłówek firmowy IAM Poland / NCKU -->
+
+  <!-- Górny pasek -->
+  <rect x="0" y="0" width="210" height="35" fill="#003366"/>
+
+  <!-- Logo/Nazwa - lewa strona -->
+  <text x="10" y="10" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="white">
+    IAM - INTERNATIONAL ASSOCIATION
+  </text>
+  <text x="10" y="17" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="white">
+    OF MESOTHERAPY
+  </text>
+  <text x="10" y="24" font-family="Arial, sans-serif" font-size="6" fill="white">
+    Niepubliczne Centrum Kształcenia Ustawicznego
+  </text>
+  <text x="10" y="30" font-family="Arial, sans-serif" font-size="5" fill="#d4af37">
+    NCKU IAM Poland
+  </text>
+
+  <!-- Dane kontaktowe - prawa strona -->
+  <text x="200" y="8" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="end">
+    ul. Stefana Kołaczkowskiego 4
+  </text>
+  <text x="200" y="12" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="end">
+    30-399 Kraków, Polska
+  </text>
+  <text x="200" y="16" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="end">
+    tel. +48 (12) XXX XX XX
+  </text>
+  <text x="200" y="20" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="end">
+    email: sekretariat@iam-poland.pl
+  </text>
+  <text x="200" y="25" font-family="Arial, sans-serif" font-size="3.5" fill="white" text-anchor="end">
+    KRS: 0001104217 | NIP: 6762668277
+  </text>
+  <text x="200" y="29" font-family="Arial, sans-serif" font-size="3.5" fill="white" text-anchor="end">
+    REGON: 528560167
+  </text>
+
+  <!-- Linia oddzielająca -->
+  <line x1="10" y1="40" x2="200" y2="40" stroke="#d4af37" stroke-width="0.5"/>
+
+  <!-- Stopka (na dole strony) -->
+  <rect x="0" y="287" width="210" height="10" fill="#f8f9fa"/>
+  <line x1="10" y1="287" x2="200" y2="287" stroke="#003366" stroke-width="0.3"/>
+  <text x="105" y="292" font-family="Arial, sans-serif" font-size="3" fill="#666" text-anchor="middle">
+    IAM Poland Sp. z o.o. | Kapitał zakładowy: 50.000 PLN wpłacony w całości
+  </text>
+  <text x="105" y="295.5" font-family="Arial, sans-serif" font-size="3" fill="#666" text-anchor="middle">
+    Sąd Rejonowy dla Krakowa-Śródmieścia, XI Wydział Gospodarczy KRS | www.iam-poland.pl
+  </text>
+</svg>

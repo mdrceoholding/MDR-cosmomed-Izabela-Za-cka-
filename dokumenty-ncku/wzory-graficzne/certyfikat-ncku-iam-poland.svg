@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Tło -->
+  <rect width="800" height="600" fill="#f8f9fa"/>
+
+  <!-- Ramka zewnętrzna -->
+  <rect x="30" y="30" width="740" height="540" fill="none" stroke="#003366" stroke-width="8"/>
+  <rect x="40" y="40" width="720" height="520" fill="none" stroke="#003366" stroke-width="2"/>
+
+  <!-- Dekoracyjne linie -->
+  <line x1="50" y1="80" x2="750" y2="80" stroke="#d4af37" stroke-width="2"/>
+  <line x1="50" y1="520" x2="750" y2="520" stroke="#d4af37" stroke-width="2"/>
+
+  <!-- Logo/Pieczęć -->
+  <circle cx="400" cy="100" r="40" fill="none" stroke="#003366" stroke-width="2"/>
+  <text x="400" y="95" font-family="Arial, sans-serif" font-size="12" fill="#003366" text-anchor="middle" font-weight="bold">
+    NCKU
+  </text>
+  <text x="400" y="108" font-family="Arial, sans-serif" font-size="9" fill="#003366" text-anchor="middle">
+    IAM Poland
+  </text>
+
+  <!-- Nagłówek -->
+  <text x="400" y="170" font-family="Georgia, serif" font-size="48" font-weight="bold" fill="#003366" text-anchor="middle">
+    CERTYFIKAT
+  </text>
+
+  <text x="400" y="200" font-family="Georgia, serif" font-size="22" fill="#666" text-anchor="middle">
+    ukończenia szkolenia
+  </text>
+
+  <!-- Linia dekoracyjna -->
+  <line x1="250" y1="220" x2="550" y2="220" stroke="#d4af37" stroke-width="1"/>
+
+  <!-- Treść certyfikatu -->
+  <text x="400" y="260" font-family="Arial, sans-serif" font-size="18" fill="#333" text-anchor="middle">
+    Niniejszym zaświadcza się, że
+  </text>
+
+  <!-- Imię i nazwisko (do wypełnienia) -->
+  <text x="400" y="310" font-family="Georgia, serif" font-size="32" font-weight="bold" fill="#003366" text-anchor="middle" font-style="italic">
+    [IMIĘ I NAZWISKO]
+  </text>
+  <line x1="200" y1="320" x2="600" y2="320" stroke="#333" stroke-width="1"/>
+
+  <!-- Dalszy tekst -->
+  <text x="400" y="360" font-family="Arial, sans-serif" font-size="18" fill="#333" text-anchor="middle">
+    ukończył/a z wynikiem pozytywnym szkolenie
+  </text>
+
+  <!-- Nazwa szkolenia (do wypełnienia) -->
+  <text x="400" y="400" font-family="Georgia, serif" font-size="24" font-weight="bold" fill="#003366" text-anchor="middle">
+    [NAZWA SZKOLENIA]
+  </text>
+  <line x1="150" y1="410" x2="650" y2="410" stroke="#333" stroke-width="1"/>
+
+  <!-- Szczegóły -->
+  <text x="150" y="450" font-family="Arial, sans-serif" font-size="14" fill="#666">
+    Data ukończenia: [DATA]
+  </text>
+  <text x="150" y="470" font-family="Arial, sans-serif" font-size="14" fill="#666">
+    Liczba godzin: [LICZBA] godz. dydaktycznych
+  </text>
+  <text x="150" y="490" font-family="Arial, sans-serif" font-size="14" fill="#666">
+    Nr certyfikatu: NCKU/CERT/[NUMER]/2026
+  </text>
+
+  <!-- Podpisy -->
+  <text x="580" y="450" font-family="Arial, sans-serif" font-size="12" fill="#666" text-anchor="middle">
+    _________________________
+  </text>
+  <text x="580" y="465" font-family="Arial, sans-serif" font-size="12" fill="#666" text-anchor="middle">
+    Dr n. med. Izabela Załęska
+  </text>
+  <text x="580" y="480" font-family="Arial, sans-serif" font-size="12" fill="#666" text-anchor="middle">
+    Dyrektor NCKU IAM Poland
+  </text>
+
+  <!-- Stopka -->
+  <text x="400" y="540" font-family="Arial, sans-serif" font-size="9" fill="#999" text-anchor="middle">
+    Niepubliczne Centrum Kształcenia Ustawicznego IAM Poland
+  </text>
+  <text x="400" y="552" font-family="Arial, sans-serif" font-size="8" fill="#999" text-anchor="middle">
+    ul. Stefana Kołaczkowskiego 4, 30-399 Kraków | KRS: 0001104217 | sekretariat@iam-poland.pl
+  </text>
+</svg>
