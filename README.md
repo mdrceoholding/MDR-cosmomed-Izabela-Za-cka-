@@ -67,6 +67,15 @@ Procedury dokumenty
 - ✅ **`KATALOG-DOKUMENTOW-PDF.html`** - **Kompletny katalog wszystkich 21 dokumentów**
 - 📖 **`README.md`** - Instrukcja jak pobierać dokumenty jako PDF
 
+**F. 🔬 Dokumenty MDR/RWE/PMCF** (`dokumenty-mdr-rwe-pmcf/`)
+- ✅ **`FORMULARZ-REJESTRACJA-GABINET-URPL.md`** - **Rejestracja gabinetów w URPL**
+- ✅ **`PROTOKOL-ZBIERANIA-DANYCH-RWE.md`** - **Protokół badania Real World Evidence**
+- ✅ **`KARTA-PACJENTA-RWE-CRF.md`** - **Case Report Form (CRF) dla pacjentów**
+- ✅ **`RAPORT-PMCF-DLA-PRODUCENTA.md`** - **Raport PMCF dla producenta wyrobów**
+- ✅ **`UMOWA-EU-REP-PRODUCENT.md`** - **Umowa EU Representative & RWE/PMCF (165k EUR/rok)**
+- ✅ **`FORMULARZ-ZGODA-PACJENTA.md`** - **Informed Consent - zgoda pacjenta**
+- 📖 **`README.md`** - **Kompletna instrukcja workflow i cele biznesowe**
+
 **📖 INDEKS:** `dokumenty-ncku/INDEX.md` - Szczegółowy przewodnik po wszystkich dokumentach
 
 ---
@@ -126,6 +135,19 @@ Procedury dokumenty
      - Regulamin Funduszu MDR Compliance
      - Katalog wszystkich 21 dokumentów
 
+6. **Dokumenty MDR/RWE/PMCF (rejestracja gabinetów):** 🔬
+   - **START TUTAJ:** Otwórz `dokumenty-ncku/dokumenty-mdr-rwe-pmcf/README.md`
+   - **Cel:** Rejestracja 60 gabinetów w URPL + zbieranie danych RWE
+   - **Potencjał:** 495,000 EUR/rok (3 wyroby × 165k EUR)
+   - **Workflow:**
+     1. Zarejestruj gabinety w URPL (FORMULARZ-REJESTRACJA-GABINET-URPL.md)
+     2. Zatwierdź protokół RWE (PROTOKOL-ZBIERANIA-DANYCH-RWE.md)
+     3. Zbieraj dane pacjentów (KARTA-PACJENTA-RWE-CRF.md)
+     4. Generuj raporty dla producentów (RAPORT-PMCF-DLA-PRODUCENTA.md)
+     5. Podpisz umowy EU-Rep (UMOWA-EU-REP-PRODUCENT.md)
+   - **Wyroby:** Alluzience, Profhilo, Nucleofill (klasa III)
+   - **Zgodność:** MDR (UE) 2017/745, MEDDEV, ISO 14155, ICH-GCP, RODO
+
 ### Informacje kontaktowe
 
 - **Philosophy prosta S.A.** - Pani Dorota Płoskoń, Prezes Zarządu
@@ -153,4 +175,4 @@ Procedury dokumenty
 ---
 
 **Ostatnia aktualizacja:** 26 października 2025
-**Wersja:** 3.1 (dodano dokumenty PDF gotowe do pobrania: Uchwała Zarządu, Statut NCKU, Regulamin Funduszu MDR + Katalog wszystkich dokumentów)
+**Wersja:** 4.0 (dodano kompletny pakiet MDR/RWE/PMCF - 7 dokumentów do rejestracji gabinetów i zbierania danych + potencjał 495k EUR/rok)
