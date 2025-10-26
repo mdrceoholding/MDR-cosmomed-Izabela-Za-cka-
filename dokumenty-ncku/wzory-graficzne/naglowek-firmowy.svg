@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297">
+  <!-- Format A4 - nagłówek firmowy -->
+
+  <!-- Górny pasek -->
+  <rect x="0" y="0" width="210" height="30" fill="#003366"/>
+
+  <!-- Logo/Nazwa -->
+  <text x="10" y="12" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">
+    NARODOWE CENTRUM
+  </text>
+  <text x="10" y="20" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">
+    KSZTAŁCENIA USTAWICZNEGO
+  </text>
+  <text x="10" y="26" font-family="Arial, sans-serif" font-size="5" fill="white">
+    IAM Poland Sp. z o.o.
+  </text>
+
+  <!-- Dane kontaktowe po prawej -->
+  <text x="200" y="10" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="end">
+    ul. [Adres]
+  </text>
+  <text x="200" y="15" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="end">
+    tel. [Telefon] | email: [Email]
+  </text>
+  <text x="200" y="20" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="end">
+    NIP: [NIP] | REGON: [REGON]
+  </text>
+  <text x="200" y="25" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="end">
+    www.ncku.pl
+  </text>
+
+  <!-- Linia oddzielająca -->
+  <line x1="10" y1="35" x2="200" y2="35" stroke="#d4af37" stroke-width="0.5"/>
+
+  <!-- Stopka (na dole strony) -->
+  <rect x="0" y="287" width="210" height="10" fill="#f8f9fa"/>
+  <text x="105" y="293" font-family="Arial, sans-serif" font-size="3" fill="#666" text-anchor="middle">
+    NCKU | Akredytowane programy kształcenia zgodne z MDR | IAM Poland Sp. z o.o.
+  </text>
+</svg>

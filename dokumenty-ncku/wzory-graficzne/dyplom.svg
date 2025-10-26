@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 1000 700">
+  <!-- Tło -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f0f4f8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="700" fill="url(#bgGrad)"/>
+
+  <!-- Ramka główna -->
+  <rect x="40" y="40" width="920" height="620" fill="none" stroke="#003366" stroke-width="12" rx="10"/>
+  <rect x="55" y="55" width="890" height="590" fill="none" stroke="#d4af37" stroke-width="4"/>
+  <rect x="65" y="65" width="870" height="570" fill="none" stroke="#003366" stroke-width="1"/>
+
+  <!-- Dekoracje narożne -->
+  <circle cx="80" cy="80" r="15" fill="#d4af37"/>
+  <circle cx="920" cy="80" r="15" fill="#d4af37"/>
+  <circle cx="80" cy="620" r="15" fill="#d4af37"/>
+  <circle cx="920" cy="620" r="15" fill="#d4af37"/>
+
+  <!-- Logo/Pieczęć centralnie u góry -->
+  <circle cx="500" cy="120" r="50" fill="none" stroke="#003366" stroke-width="3"/>
+  <circle cx="500" cy="120" r="45" fill="none" stroke="#003366" stroke-width="1.5"/>
+  <text x="500" y="120" font-family="Arial, sans-serif" font-size="18" fill="#003366" text-anchor="middle" dy="6">
+    NCKU
+  </text>
+
+  <!-- Nazwa instytucji -->
+  <text x="500" y="195" font-family="Georgia, serif" font-size="20" fill="#003366" text-anchor="middle">
+    NARODOWE CENTRUM KSZTAŁCENIA USTAWICZNEGO
+  </text>
+  <text x="500" y="220" font-family="Georgia, serif" font-size="16" fill="#666" text-anchor="middle">
+    działające w ramach IAM Poland Sp. z o.o.
+  </text>
+
+  <!-- Linia dekoracyjna -->
+  <line x1="250" y1="240" x2="750" y2="240" stroke="#d4af37" stroke-width="2"/>
+
+  <!-- DYPLOM -->
+  <text x="500" y="290" font-family="Georgia, serif" font-size="60" font-weight="bold" fill="#003366" text-anchor="middle">
+    DYPLOM
+  </text>
+
+  <!-- Podtytuł -->
+  <text x="500" y="330" font-family="Georgia, serif" font-size="22" fill="#666" text-anchor="middle">
+    ukończenia programu kształcenia
+  </text>
+
+  <!-- Linia dekoracyjna -->
+  <line x1="300" y1="350" x2="700" y2="350" stroke="#d4af37" stroke-width="1"/>
+
+  <!-- Treść dyplomu -->
+  <text x="500" y="390" font-family="Arial, sans-serif" font-size="20" fill="#333" text-anchor="middle">
+    Niniejszym potwierdza się, że
+  </text>
+
+  <!-- Imię i nazwisko -->
+  <text x="500" y="445" font-family="Georgia, serif" font-size="42" font-weight="bold" fill="#003366" text-anchor="middle" font-style="italic">
+    [IMIĘ I NAZWISKO]
+  </text>
+  <line x1="200" y1="460" x2="800" y2="460" stroke="#333" stroke-width="1.5"/>
+
+  <!-- Tekst kontynuacji -->
+  <text x="500" y="495" font-family="Arial, sans-serif" font-size="18" fill="#333" text-anchor="middle">
+    ukończył/a program kształcenia
+  </text>
+
+  <!-- Nazwa programu -->
+  <text x="500" y="535" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#003366" text-anchor="middle">
+    [NAZWA PROGRAMU KSZTAŁCENIA]
+  </text>
+  <line x1="150" y1="550" x2="850" y2="550" stroke="#333" stroke-width="1.5"/>
+
+  <!-- Szczegóły -->
+  <text x="150" y="590" font-family="Arial, sans-serif" font-size="15" fill="#666">
+    Data ukończenia: [DATA]
+  </text>
+  <text x="150" y="610" font-family="Arial, sans-serif" font-size="15" fill="#666">
+    Liczba godzin: [LICZBA] godz. | Nr dyplomu: NCKU-D/[NUMER]/2025
+  </text>
+
+  <!-- Podpisy -->
+  <text x="700" y="585" font-family="Arial, sans-serif" font-size="14" fill="#666" text-anchor="middle">
+    ___________________________
+  </text>
+  <text x="700" y="605" font-family="Arial, sans-serif" font-size="14" fill="#666" text-anchor="middle">
+    Dr Izabela Załęska
+  </text>
+  <text x="700" y="620" font-family="Arial, sans-serif" font-size="14" fill="#666" text-anchor="middle">
+    Dyrektor NCKU
+  </text>
+
+  <text x="300" y="585" font-family="Arial, sans-serif" font-size="14" fill="#666" text-anchor="middle">
+    ___________________________
+  </text>
+  <text x="300" y="605" font-family="Arial, sans-serif" font-size="14" fill="#666" text-anchor="middle">
+    [Prezes Zarządu]
+  </text>
+  <text x="300" y="620" font-family="Arial, sans-serif" font-size="14" fill="#666" text-anchor="middle">
+    IAM Poland Sp. z o.o.
+  </text>
+
+  <!-- Stopka -->
+  <text x="500" y="660" font-family="Arial, sans-serif" font-size="11" fill="#999" text-anchor="middle">
+    Wydany w [MIEJSCOWOŚĆ], dnia [DATA]
+  </text>
+  <text x="500" y="680" font-family="Arial, sans-serif" font-size="10" fill="#aaa" text-anchor="middle">
+    www.ncku.pl | Akredytowany program zgodny z MDR
+  </text>
+</svg>

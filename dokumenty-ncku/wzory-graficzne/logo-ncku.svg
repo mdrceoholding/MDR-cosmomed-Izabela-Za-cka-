@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <!-- Logo NCKU - można użyć jako pieczęć lub logo -->
+
+  <!-- Okrąg zewnętrzny -->
+  <circle cx="150" cy="150" r="140" fill="none" stroke="#003366" stroke-width="4"/>
+
+  <!-- Okrąg wewnętrzny -->
+  <circle cx="150" cy="150" r="125" fill="none" stroke="#003366" stroke-width="2"/>
+
+  <!-- Górny tekst łukiem -->
+  <defs>
+    <path id="topArc" d="M 30,150 A 120,120 0 0,1 270,150"/>
+  </defs>
+  <text font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#003366" letter-spacing="3">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">
+      NARODOWE CENTRUM
+    </textPath>
+  </text>
+
+  <!-- Dolny tekst łukiem -->
+  <defs>
+    <path id="bottomArc" d="M 30,150 A 120,120 0 0,0 270,150"/>
+  </defs>
+  <text font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#003366" letter-spacing="3">
+    <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">
+      KSZTAŁCENIA USTAWICZNEGO
+    </textPath>
+  </text>
+
+  <!-- Centralny element - książka -->
+  <g transform="translate(150, 150)">
+    <!-- Książka jako symbol edukacji -->
+    <rect x="-40" y="-25" width="80" height="50" fill="none" stroke="#003366" stroke-width="2.5" rx="2"/>
+    <line x1="0" y1="-25" x2="0" y2="25" stroke="#003366" stroke-width="2.5"/>
+
+    <!-- Linie tekstu na książce -->
+    <line x1="-30" y1="-15" x2="-5" y2="-15" stroke="#003366" stroke-width="1.5"/>
+    <line x1="-30" y1="-5" x2="-5" y2="-5" stroke="#003366" stroke-width="1.5"/>
+    <line x1="-30" y1="5" x2="-5" y2="5" stroke="#003366" stroke-width="1.5"/>
+
+    <line x1="5" y1="-15" x2="30" y2="-15" stroke="#003366" stroke-width="1.5"/>
+    <line x1="5" y1="-5" x2="30" y2="-5" stroke="#003366" stroke-width="1.5"/>
+    <line x1="5" y1="5" x2="30" y2="5" stroke="#003366" stroke-width="1.5"/>
+
+    <!-- NCKU -->
+    <text y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#003366" text-anchor="middle">
+      NCKU
+    </text>
+  </g>
+
+  <!-- Dodatkowy akcent kolorowy (złoty) -->
+  <circle cx="150" cy="150" r="115" fill="none" stroke="#d4af37" stroke-width="1" stroke-dasharray="5,5"/>
+
+  <!-- Rok założenia (do personalizacji) -->
+  <text x="150" y="270" font-family="Arial, sans-serif" font-size="14" fill="#666" text-anchor="middle">
+    EST. 2025
+  </text>
+</svg>

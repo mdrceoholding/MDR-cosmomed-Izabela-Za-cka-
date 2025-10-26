@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Tło -->
+  <rect width="800" height="600" fill="#f8f9fa"/>
+
+  <!-- Ramka zewnętrzna -->
+  <rect x="30" y="30" width="740" height="540" fill="none" stroke="#003366" stroke-width="8"/>
+  <rect x="40" y="40" width="720" height="520" fill="none" stroke="#003366" stroke-width="2"/>
+
+  <!-- Dekoracyjne linie -->
+  <line x1="50" y1="80" x2="750" y2="80" stroke="#d4af37" stroke-width="2"/>
+  <line x1="50" y1="520" x2="750" y2="520" stroke="#d4af37" stroke-width="2"/>
+
+  <!-- Logo/Pieczęć (miejsca na dodanie) -->
+  <circle cx="400" cy="100" r="40" fill="none" stroke="#003366" stroke-width="2"/>
+  <text x="400" y="110" font-family="Arial, sans-serif" font-size="16" fill="#003366" text-anchor="middle">NCKU</text>
+
+  <!-- Nagłówek -->
+  <text x="400" y="180" font-family="Georgia, serif" font-size="48" font-weight="bold" fill="#003366" text-anchor="middle">
+    CERTYFIKAT
+  </text>
+
+  <text x="400" y="210" font-family="Georgia, serif" font-size="24" fill="#666" text-anchor="middle">
+    ukończenia szkolenia
+  </text>
+
+  <!-- Linia dekoracyjna -->
+  <line x1="250" y1="230" x2="550" y2="230" stroke="#d4af37" stroke-width="1"/>
+
+  <!-- Treść certyfikatu -->
+  <text x="400" y="270" font-family="Arial, sans-serif" font-size="18" fill="#333" text-anchor="middle">
+    Niniejszym zaświadcza się, że
+  </text>
+
+  <!-- Imię i nazwisko (do wypełnienia) -->
+  <text x="400" y="320" font-family="Georgia, serif" font-size="32" font-weight="bold" fill="#003366" text-anchor="middle" font-style="italic">
+    [IMIĘ I NAZWISKO]
+  </text>
+  <line x1="200" y1="330" x2="600" y2="330" stroke="#333" stroke-width="1"/>
+
+  <!-- Dalszy tekst -->
+  <text x="400" y="370" font-family="Arial, sans-serif" font-size="18" fill="#333" text-anchor="middle">
+    ukończył/a z wynikiem pozytywnym szkolenie
+  </text>
+
+  <!-- Nazwa szkolenia (do wypełnienia) -->
+  <text x="400" y="410" font-family="Georgia, serif" font-size="24" font-weight="bold" fill="#003366" text-anchor="middle">
+    [NAZWA SZKOLENIA]
+  </text>
+  <line x1="150" y1="420" x2="650" y2="420" stroke="#333" stroke-width="1"/>
+
+  <!-- Szczegóły -->
+  <text x="150" y="460" font-family="Arial, sans-serif" font-size="14" fill="#666">
+    Data ukończenia: [DATA]
+  </text>
+  <text x="150" y="480" font-family="Arial, sans-serif" font-size="14" fill="#666">
+    Liczba godzin: [LICZBA] godz.
+  </text>
+  <text x="150" y="500" font-family="Arial, sans-serif" font-size="14" fill="#666">
+    Nr certyfikatu: NCKU/[NUMER]/2025
+  </text>
+
+  <!-- Podpisy -->
+  <text x="580" y="460" font-family="Arial, sans-serif" font-size="12" fill="#666" text-anchor="middle">
+    _________________________
+  </text>
+  <text x="580" y="475" font-family="Arial, sans-serif" font-size="12" fill="#666" text-anchor="middle">
+    Dr Izabela Załęska
+  </text>
+  <text x="580" y="490" font-family="Arial, sans-serif" font-size="12" fill="#666" text-anchor="middle">
+    Dyrektor NCKU
+  </text>
+
+  <!-- Stopka -->
+  <text x="400" y="545" font-family="Arial, sans-serif" font-size="10" fill="#999" text-anchor="middle">
+    Narodowe Centrum Kształcenia Ustawicznego | IAM Poland Sp. z o.o. | www.ncku.pl
+  </text>
+</svg>
