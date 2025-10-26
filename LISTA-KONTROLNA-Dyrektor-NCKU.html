@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Kontrolna - Dyrektor NCKU | Dr Izabela Załęska</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #003366 0%, #005599 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header h2 {
+            font-size: 1.5em;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .progress-section {
+            background: #f8f9fa;
+            padding: 30px 40px;
+            border-bottom: 3px solid #003366;
+        }
+
+        .progress-bar-container {
+            background: #e0e0e0;
+            border-radius: 20px;
+            height: 40px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #28a745 0%, #20c997 100%);
+            height: 100%;
+            width: 0%;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .stat-card h3 {
+            color: #003366;
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .phase {
+            margin-bottom: 40px;
+            border-left: 5px solid #003366;
+            padding-left: 20px;
+        }
+
+        .phase-header {
+            background: linear-gradient(135deg, #003366 0%, #005599 100%);
+            color: white;
+            padding: 20px;
+            margin: 0 0 20px -25px;
+            border-radius: 0 10px 10px 0;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .phase-header:hover {
+            background: linear-gradient(135deg, #005599 0%, #0077cc 100%);
+        }
+
+        .phase-header h2 {
+            font-size: 1.5em;
+        }
+
+        .toggle-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s;
+        }
+
+        .phase-header.collapsed .toggle-icon {
+            transform: rotate(-90deg);
+        }
+
+        .section {
+            margin-bottom: 30px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .section h3 {
+            color: #003366;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+        }
+
+        .section h3::before {
+            content: "▶";
+            margin-right: 10px;
+            color: #28a745;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 12px;
+            margin: 8px 0;
+            background: white;
+            border-radius: 8px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .checklist-item:hover {
+            border-color: #003366;
+            box-shadow: 0 2px 8px rgba(0,51,102,0.2);
+        }
+
+        .checklist-item.completed {
+            background: #d4edda;
+            border-color: #28a745;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            width: 25px;
+            height: 25px;
+            margin-right: 15px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .checklist-item label {
+            cursor: pointer;
+            flex-grow: 1;
+            font-size: 1.05em;
+        }
+
+        .checklist-item.completed label {
+            text-decoration: line-through;
+            color: #666;
+        }
+
+        .nested-checklist {
+            margin-left: 40px;
+            margin-top: 10px;
+        }
+
+        .contacts {
+            background: #e8f4f8;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        .contacts h2 {
+            color: #003366;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #003366;
+        }
+
+        .contact-card h4 {
+            color: #003366;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .contact-card p {
+            margin: 8px 0;
+            color: #555;
+        }
+
+        .contact-card strong {
+            color: #003366;
+        }
+
+        .contact-card input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .notes {
+            background: #fff9e6;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border: 2px solid #ffc107;
+        }
+
+        .notes h3 {
+            color: #003366;
+            margin-bottom: 15px;
+        }
+
+        .notes textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1em;
+            resize: vertical;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #003366 0%, #005599 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #005599 0%, #0077cc 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,51,102,0.3);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: linear-gradient(135deg, #20c997 0%, #17a2b8 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40,167,69,0.3);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: linear-gradient(135deg, #c82333 0%, #bd2130 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(220,53,69,0.3);
+        }
+
+        .footer {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .print-hide {
+            display: block;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .print-hide {
+                display: none !important;
+            }
+
+            .container {
+                box-shadow: none;
+            }
+
+            .phase-header {
+                page-break-after: avoid;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .phase {
+                padding-left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>LISTA KONTROLNA</h1>
+            <h2>Objęcie stanowiska Dyrektora NCKU</h2>
+            <p style="margin-top: 20px; font-size: 1.2em;">Dr Izabela Załęska | Data powołania: 15 kwietnia 2025</p>
+        </div>
+
+        <div class="progress-section print-hide">
+            <h2 style="color: #003366; margin-bottom: 10px;">Postęp realizacji</h2>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar">0%</div>
+            </div>
+            <div class="stats">
+                <div class="stat-card">
+                    <h3 id="totalTasks">0</h3>
+                    <p>Wszystkie zadania</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="completedTasks" style="color: #28a745;">0</h3>
+                    <p>Wykonane</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="pendingTasks" style="color: #ffc107;">0</h3>
+                    <p>Do wykonania</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="progressPercent">0%</h3>
+                    <p>Ukończenie</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="action-buttons print-hide">
+                <button class="btn btn-primary" onclick="saveProgress()">💾 Zapisz postęp</button>
+                <button class="btn btn-success" onclick="loadProgress()">📂 Wczytaj postęp</button>
+                <button class="btn btn-danger" onclick="resetProgress()">🔄 Resetuj wszystko</button>
+                <button class="btn btn-primary" onclick="window.print()">🖨️ Drukuj</button>
+            </div>
+
+            <!-- FAZA 1 -->
+            <div class="phase">
+                <div class="phase-header" onclick="togglePhase(this)">
+                    <h2>FAZA 1: PRZED OBJĘCIEM STANOWISKA (do 14 kwietnia 2025)</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="phase-content">
+                    <div class="section">
+                        <h3>A. FORMALIZACJA DOKUMENTÓW UCHWAŁY</h3>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-1-1" onchange="updateProgress()">
+                            <label for="task-1-1">Uzupełnić numer uchwały (…/2025)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-1-2" onchange="updateProgress()">
+                            <label for="task-1-2">Wpisać dokładną datę podjęcia uchwały (… kwietnia 2025 r.)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-1-3" onchange="updateProgress()">
+                            <label for="task-1-3">Wpisać miejsce podjęcia uchwały</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-1-4" onchange="updateProgress()">
+                            <label for="task-1-4">Uzupełnić odniesienie do paragrafu Statutu (§ …)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-1-5" onchange="updateProgress()">
+                            <label for="task-1-5">Uzyskać podpis Prezesa Zarządu</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-1-6" onchange="updateProgress()">
+                            <label for="task-1-6">Uzyskać podpis Sekretarza Zarządu</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-1-7" onchange="updateProgress()">
+                            <label for="task-1-7">Wykonać kopie uchwały (min. 3 egzemplarze)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-1-8" onchange="updateProgress()">
+                            <label for="task-1-8">Zarchiwizować oryginał uchwały</label>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3>B. PRZYGOTOWANIE DO PRZEKAZANIA OBOWIĄZKÓW</h3>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-1-9" onchange="updateProgress()">
+                            <label for="task-1-9">Zaplanować datę i godzinę spotkania przekazania</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-1-10" onchange="updateProgress()">
+                            <label for="task-1-10">Przygotować listę dokumentów do przejęcia</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-1-11" onchange="updateProgress()">
+                            <label for="task-1-11">Przygotować listę składników majątku do przejęcia</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-1-12" onchange="updateProgress()">
+                            <label for="task-1-12">Zarezerwować miejsce na spotkanie</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-1-13" onchange="updateProgress()">
+                            <label for="task-1-13">Powiadomić uczestników o terminie</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAZA 2 -->
+            <div class="phase">
+                <div class="phase-header" onclick="togglePhase(this)">
+                    <h2>FAZA 2: DZIEŃ PRZEKAZANIA (15 kwietnia 2025)</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="phase-content">
+                    <div class="section">
+                        <h3>C. PROTOKÓŁ PRZEKAZANIA OBOWIĄZKÓW</h3>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-2-1" onchange="updateProgress()">
+                            <label for="task-2-1">Uzupełnić datę w protokole (… kwietnia 2025 r.)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-2-2" onchange="updateProgress()">
+                            <label for="task-2-2">Uzupełnić miejsce sporządzenia protokołu</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-2-3" onchange="updateProgress()">
+                            <label for="task-2-3">Wpisać imię i nazwisko Prezesa Zarządu</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-2-4" onchange="updateProgress()">
+                            <label for="task-2-4">Wpisać numer uchwały Zarządu</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-2-5" onchange="updateProgress()">
+                            <label for="task-2-5">Podpisać protokół przez Prezesa Zarządu</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-2-6" onchange="updateProgress()">
+                            <label for="task-2-6">Podpisać protokół przez Dr Izabelę Załęską</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-2-7" onchange="updateProgress()">
+                            <label for="task-2-7">Przybić pieczęcie na protokole</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-2-8" onchange="updateProgress()">
+                            <label for="task-2-8">Wykonać kopie protokołu (2 egzemplarze)</label>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3>D. FIZYCZNE PRZEKAZANIE</h3>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-2-9" onchange="updateProgress()">
+                            <label for="task-2-9">Pieczęcie NCKU (nazwa, ilość: _______)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-2-10" onchange="updateProgress()">
+                            <label for="task-2-10">Klucze do pomieszczeń (ilość: _______)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-2-11" onchange="updateProgress()">
+                            <label for="task-2-11">Sprzęt komputerowy (lista: _______)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-2-12" onchange="updateProgress()">
+                            <label for="task-2-12">Telefon służbowy (numer: _______)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-2-13" onchange="updateProgress()">
+                            <label for="task-2-13">Karty dostępu/identyfikatory</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-2-14" onchange="updateProgress()">
+                            <label for="task-2-14">Dokumentacja organizacyjna</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-2-15" onchange="updateProgress()">
+                            <label for="task-2-15">Dokumentacja finansowa</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-2-16" onchange="updateProgress()">
+                            <label for="task-2-16">Umowy i kontrakty</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-2-17" onchange="updateProgress()">
+                            <label for="task-2-17">Dane dostępowe do systemów (lista: _______)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-2-18" onchange="updateProgress()">
+                            <label for="task-2-18">Kontakty służbowe (baza danych)</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAZA 3 -->
+            <div class="phase">
+                <div class="phase-header" onclick="togglePhase(this)">
+                    <h2>FAZA 3: PIERWSZE 48 GODZIN (15-17 kwietnia)</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="phase-content">
+                    <div class="section">
+                        <h3>E. NATYCHMIASTOWE DZIAŁANIA ADMINISTRACYJNE</h3>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-3-1" onchange="updateProgress()">
+                            <label for="task-3-1">Zmiana uprawnień w systemach informatycznych</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-3-2" onchange="updateProgress()">
+                            <label for="task-3-2">Aktualizacja podpisów w systemach bankowych (jeśli dotyczy)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-3-3" onchange="updateProgress()">
+                            <label for="task-3-3">Powiadomienie pracowników NCKU o zmianie</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-3-4" onchange="updateProgress()">
+                            <label for="task-3-4">Przegląd bieżących spraw do załatwienia</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-3-5" onchange="updateProgress()">
+                            <label for="task-3-5">Identyfikacja pilnych zadań wymagających natychmiastowej uwagi</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-3-6" onchange="updateProgress()">
+                            <label for="task-3-6">Zapoznanie się z bieżącymi projektami</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAZA 4 -->
+            <div class="phase">
+                <div class="phase-header" onclick="togglePhase(this)">
+                    <h2>FAZA 4: PIERWSZY TYDZIEŃ (15-22 kwietnia)</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="phase-content">
+                    <div class="section">
+                        <h3>F. KOMUNIKACJA ZEWNĘTRZNA</h3>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-4-1" onchange="updateProgress()">
+                            <label for="task-4-1">Przygotować ogłoszenie o zmianie dyrektora</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-4-2" onchange="updateProgress()">
+                            <label for="task-4-2">Powiadomić Kuratorium Oświaty</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-4-3" onchange="updateProgress()">
+                            <label for="task-4-3">Powiadomić Urząd Miasta/Gminy</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-4-4" onchange="updateProgress()">
+                            <label for="task-4-4">Powiadomić inne organy administracji publicznej</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-4-5" onchange="updateProgress()">
+                            <label for="task-4-5">Powiadomić organizacje partnerskie</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-4-6" onchange="updateProgress()">
+                            <label for="task-4-6">Powiadomić organy akredytujące</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-4-7" onchange="updateProgress()">
+                            <label for="task-4-7">Zaktualizować dane kontaktowe na stronie internetowej</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-4-8" onchange="updateProgress()">
+                            <label for="task-4-8">Zaktualizować podpisy w korespondencji elektronicznej</label>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3>G. PRZEGLĄD OPERACYJNY</h3>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-4-9" onchange="updateProgress()">
+                            <label for="task-4-9">Spotkanie z pracownikami NCKU</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-4-10" onchange="updateProgress()">
+                            <label for="task-4-10">Przegląd aktualnej struktury organizacyjnej</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-4-11" onchange="updateProgress()">
+                            <label for="task-4-11">Analiza bieżących projektów edukacyjnych</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-4-12" onchange="updateProgress()">
+                            <label for="task-4-12">Przegląd harmonogramu szkoleń</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-4-13" onchange="updateProgress()">
+                            <label for="task-4-13">Identyfikacja kluczowych osób kontaktowych</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-4-14" onchange="updateProgress()">
+                            <label for="task-4-14">Przegląd umów z wykładowcami/trenerami</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAZA 5 -->
+            <div class="phase">
+                <div class="phase-header" onclick="togglePhase(this)">
+                    <h2>FAZA 5: ZADANIA KRYTYCZNE - AKREDYTACJA MDR (ASAP)</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="phase-content">
+                    <div class="section">
+                        <h3>H. DOKUMENTACJA AKREDYTACYJNA MDR</h3>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-1" onchange="updateProgress()">
+                            <label for="task-5-1">Kontakt z Panią Dorotą Płoskoń (Philosophy prosta S.A.)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-2" onchange="updateProgress()">
+                            <label for="task-5-2">Ustalenie listy wymaganych dokumentów</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-3" onchange="updateProgress()">
+                            <label for="task-5-3">Odbiór: Statut NCKU</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-4" onchange="updateProgress()">
+                            <label for="task-5-4">Odbiór: Program kształcenia zgodny z MDR</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-5" onchange="updateProgress()">
+                            <label for="task-5-5">Odbiór: Dokumentacja procesu edukacyjnego</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-6" onchange="updateProgress()">
+                            <label for="task-5-6">Odbiór: Kwalifikacje kadry dydaktycznej</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-7" onchange="updateProgress()">
+                            <label for="task-5-7">Odbiór: Regulamin organizacyjny</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-8" onchange="updateProgress()">
+                            <label for="task-5-8">Odbiór: Procedury jakości</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-9" onchange="updateProgress()">
+                            <label for="task-5-9">Odbiór: Infrastruktura i wyposażenie</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-10" onchange="updateProgress()">
+                            <label for="task-5-10">Odbiór: Inne dokumenty</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-11" onchange="updateProgress()">
+                            <label for="task-5-11">Weryfikacja kompletności dokumentacji</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-12" onchange="updateProgress()">
+                            <label for="task-5-12">Przygotowanie wniosku o akredytację</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-13" onchange="updateProgress()">
+                            <label for="task-5-13">Identyfikacja organu akredytującego</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-14" onchange="updateProgress()">
+                            <label for="task-5-14">Złożenie wniosku o akredytację</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-15" onchange="updateProgress()">
+                            <label for="task-5-15">Uzyskanie potwierdzenia wpływu dokumentów</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-16" onchange="updateProgress()">
+                            <label for="task-5-16">Ustalenie harmonogramu procesu akredytacyjnego</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-17" onchange="updateProgress()">
+                            <label for="task-5-17">Przygotowanie się do audytu (jeśli wymagany)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-18" onchange="updateProgress()">
+                            <label for="task-5-18">Monitorowanie postępu procesu akredytacyjnego</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-19" onchange="updateProgress()">
+                            <label for="task-5-19">Odpowiadanie na pytania organu akredytującego</label>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3>I. WSPÓŁPRACA Z PHILOSOPHY S.A.</h3>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-20" onchange="updateProgress()">
+                            <label for="task-5-20">Pierwsze spotkanie z przedstawicielami Philosophy S.A.</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-21" onchange="updateProgress()">
+                            <label for="task-5-21">Ustalenie zakresu współpracy</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-22" onchange="updateProgress()">
+                            <label for="task-5-22">Zdefiniowanie odpowiedzialności stron</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-23" onchange="updateProgress()">
+                            <label for="task-5-23">Ustalenie harmonogramu dostarczania dokumentów</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-24" onchange="updateProgress()">
+                            <label for="task-5-24">Ustalenie kanałów komunikacji</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-5-25" onchange="updateProgress()">
+                            <label for="task-5-25">Ustalenie częstotliwości cyklicznych spotkań statusowych</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAZA 6 -->
+            <div class="phase">
+                <div class="phase-header" onclick="togglePhase(this)">
+                    <h2>FAZA 6: ZADANIA KRYTYCZNE - REJESTRACJA NCKU (ASAP)</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="phase-content">
+                    <div class="section">
+                        <h3>J. DOKUMENTY REJESTRACYJNE</h3>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-6-1" onchange="updateProgress()">
+                            <label for="task-6-1">Odbiór: Statut NCKU (wersja finalna)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-6-2" onchange="updateProgress()">
+                            <label for="task-6-2">Odbiór załączników do dokumentów rejestrowych</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-6-3" onchange="updateProgress()">
+                            <label for="task-6-3">Weryfikacja zgodności dokumentów z wymogami prawnymi</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-6-4" onchange="updateProgress()">
+                            <label for="task-6-4">Weryfikacja zgodności z MDR</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-6-5" onchange="updateProgress()">
+                            <label for="task-6-5">Przygotowanie: Oświadczenia dyrektora</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-6-6" onchange="updateProgress()">
+                            <label for="task-6-6">Przygotowanie: Dowód posiadania lokalu</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-6-7" onchange="updateProgress()">
+                            <label for="task-6-7">Przygotowanie: Zaświadczenia o niekaralności (jeśli wymagane)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-6-8" onchange="updateProgress()">
+                            <label for="task-6-8">Przygotowanie innych wymaganych dokumentów</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-6-9" onchange="updateProgress()">
+                            <label for="task-6-9">Identyfikacja właściwego organu rejestrującego</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-6-10" onchange="updateProgress()">
+                            <label for="task-6-10">Złożenie kompletnego wniosku rejestracyjnego</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-6-11" onchange="updateProgress()">
+                            <label for="task-6-11">Uiszczenie opłat rejestracyjnych</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-6-12" onchange="updateProgress()">
+                            <label for="task-6-12">Uzyskanie potwierdzenia wpływu dokumentów</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-6-13" onchange="updateProgress()">
+                            <label for="task-6-13">Śledzenie statusu rejestracji</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-6-14" onchange="updateProgress()">
+                            <label for="task-6-14">Uzupełnianie dokumentacji (jeśli wezwanie)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-6-15" onchange="updateProgress()">
+                            <label for="task-6-15">Odbiór decyzji rejestracyjnej</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAZA 7 -->
+            <div class="phase">
+                <div class="phase-header" onclick="togglePhase(this)">
+                    <h2>FAZA 7: PIERWSZY MIESIĄC (15 kwietnia - 15 maja)</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="phase-content">
+                    <div class="section">
+                        <h3>K. ZARZĄDZANIE PERSONELEM</h3>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-1" onchange="updateProgress()">
+                            <label for="task-7-1">Przegląd aktualnego stanu zatrudnienia</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-2" onchange="updateProgress()">
+                            <label for="task-7-2">Analiza umów o pracę/umów cywilnoprawnych</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-3" onchange="updateProgress()">
+                            <label for="task-7-3">Spotkania indywidualne z kluczowymi pracownikami</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-4" onchange="updateProgress()">
+                            <label for="task-7-4">Ocena potrzeb kadrowych</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-5" onchange="updateProgress()">
+                            <label for="task-7-5">Planowanie rekrutacji (jeśli potrzebne)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-6" onchange="updateProgress()">
+                            <label for="task-7-6">Zatwierdzenie zakresów obowiązków</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-7" onchange="updateProgress()">
+                            <label for="task-7-7">Ustalenie systemu oceny pracowników</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-8" onchange="updateProgress()">
+                            <label for="task-7-8">Wdrożenie regulaminu pracy (jeśli nowy)</label>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3>L. PLANOWANIE STRATEGICZNE</h3>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-9" onchange="updateProgress()">
+                            <label for="task-7-9">Analiza SWOT NCKU</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-10" onchange="updateProgress()">
+                            <label for="task-7-10">Określenie celów strategicznych na 2025 rok</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-11" onchange="updateProgress()">
+                            <label for="task-7-11">Plan: Cele edukacyjne</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-12" onchange="updateProgress()">
+                            <label for="task-7-12">Plan: Planowane szkolenia</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-13" onchange="updateProgress()">
+                            <label for="task-7-13">Plan: Rozwój oferty</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-14" onchange="updateProgress()">
+                            <label for="task-7-14">Plan: Współpraca z partnerami</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-15" onchange="updateProgress()">
+                            <label for="task-7-15">Plan: Działania marketingowe</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-16" onchange="updateProgress()">
+                            <label for="task-7-16">Plan: Rozwój infrastruktury</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-17" onchange="updateProgress()">
+                            <label for="task-7-17">Konsultacje z Zarządem IAM Poland</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-18" onchange="updateProgress()">
+                            <label for="task-7-18">Finalizacja planu działania</label>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3>M. BUDŻETOWANIE</h3>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-19" onchange="updateProgress()">
+                            <label for="task-7-19">Przegląd budżetu bieżącego</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-20" onchange="updateProgress()">
+                            <label for="task-7-20">Analiza wydatków za ostatni kwartał</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-21" onchange="updateProgress()">
+                            <label for="task-7-21">Identyfikacja źródeł przychodów</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-22" onchange="updateProgress()">
+                            <label for="task-7-22">Projekcja przychodów na 2025</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-23" onchange="updateProgress()">
+                            <label for="task-7-23">Kalkulacja kosztów operacyjnych</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-24" onchange="updateProgress()">
+                            <label for="task-7-24">Planowanie inwestycji</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-25" onchange="updateProgress()">
+                            <label for="task-7-25">Przygotowanie projektu budżetu na 2025</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-26" onchange="updateProgress()">
+                            <label for="task-7-26">Prezentacja budżetu Zarządowi</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-27" onchange="updateProgress()">
+                            <label for="task-7-27">Uzyskanie zatwierdzenia budżetu</label>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3>N. PIERWSZE SPRAWOZDANIE</h3>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-28" onchange="updateProgress()">
+                            <label for="task-7-28">Zebranie danych o działalności (15-30 kwietnia)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-29" onchange="updateProgress()">
+                            <label for="task-7-29">Przygotowanie raportu z działalności</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-30" onchange="updateProgress()">
+                            <label for="task-7-30">Analiza realizacji celów</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-31" onchange="updateProgress()">
+                            <label for="task-7-31">Identyfikacja wyzwań i problemów</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-32" onchange="updateProgress()">
+                            <label for="task-7-32">Rekomendacje dla Zarządu</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-33" onchange="updateProgress()">
+                            <label for="task-7-33">Przygotowanie prezentacji</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-7-34" onchange="updateProgress()">
+                            <label for="task-7-34">Złożenie sprawozdania Zarządowi</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAZA 8 -->
+            <div class="phase">
+                <div class="phase-header" onclick="togglePhase(this)">
+                    <h2>FAZA 8: ZADANIA CIĄGŁE (ONGOING)</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="phase-content">
+                    <div class="section">
+                        <h3>O. ZARZĄDZANIE OPERACYJNE</h3>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-8-1" onchange="updateProgress()">
+                            <label for="task-8-1">Cotygodniowy przegląd spraw bieżących</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-8-2" onchange="updateProgress()">
+                            <label for="task-8-2">Comiesięczne spotkania z zespołem</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-8-3" onchange="updateProgress()">
+                            <label for="task-8-3">Monitorowanie realizacji programów szkoleniowych</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-8-4" onchange="updateProgress()">
+                            <label for="task-8-4">Nadzór nad jakością kształcenia</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-8-5" onchange="updateProgress()">
+                            <label for="task-8-5">Kontrola realizacji budżetu</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-8-6" onchange="updateProgress()">
+                            <label for="task-8-6">Komunikacja z Zarządem IAM Poland</label>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3>P. ZGODNOŚĆ I COMPLIANCE</h3>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-8-7" onchange="updateProgress()">
+                            <label for="task-8-7">Comiesięczny przegląd zgodności z MDR</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-8-8" onchange="updateProgress()">
+                            <label for="task-8-8">Aktualizacja dokumentacji (w razie zmian przepisów)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-8-9" onchange="updateProgress()">
+                            <label for="task-8-9">Przegląd procedur wewnętrznych</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-8-10" onchange="updateProgress()">
+                            <label for="task-8-10">Przeprowadzenie audytów wewnętrznych</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-8-11" onchange="updateProgress()">
+                            <label for="task-8-11">Szkolenia dla personelu</label>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3>Q. ROZWÓJ I DOSKONALENIE</h3>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-8-12" onchange="updateProgress()">
+                            <label for="task-8-12">Analiza rynku szkoleń</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-8-13" onchange="updateProgress()">
+                            <label for="task-8-13">Rozwój nowych programów edukacyjnych</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-8-14" onchange="updateProgress()">
+                            <label for="task-8-14">Budowanie relacji z partnerami</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-8-15" onchange="updateProgress()">
+                            <label for="task-8-15">Marketing i promocja NCKU</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-8-16" onchange="updateProgress()">
+                            <label for="task-8-16">Pozyskiwanie uczestników szkoleń</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KONTAKTY -->
+            <div class="contacts">
+                <h2>KONTAKTY KLUCZOWE</h2>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h4>Philosophy prosta Spółka Akcyjna</h4>
+                        <p><strong>Pani Dorota Płoskoń</strong><br>Prezes Zarządu</p>
+                        <input type="text" placeholder="Telefon" id="contact-philosophy-phone">
+                        <input type="email" placeholder="Email" id="contact-philosophy-email">
+                    </div>
+
+                    <div class="contact-card">
+                        <h4>IAM Poland Sp. z o.o.</h4>
+                        <input type="text" placeholder="Prezes Zarządu - Imię i nazwisko" id="contact-iam-name">
+                        <input type="text" placeholder="Telefon" id="contact-iam-phone">
+                        <input type="email" placeholder="Email" id="contact-iam-email">
+                    </div>
+
+                    <div class="contact-card">
+                        <h4>Organy Akredytujące</h4>
+                        <input type="text" placeholder="Nazwa" id="contact-accred-name">
+                        <input type="text" placeholder="Osoba kontaktowa" id="contact-accred-person">
+                        <input type="text" placeholder="Telefon" id="contact-accred-phone">
+                        <input type="email" placeholder="Email" id="contact-accred-email">
+                    </div>
+
+                    <div class="contact-card">
+                        <h4>Organ Rejestrujący</h4>
+                        <input type="text" placeholder="Nazwa" id="contact-reg-name">
+                        <input type="text" placeholder="Osoba kontaktowa" id="contact-reg-person">
+                        <input type="text" placeholder="Telefon" id="contact-reg-phone">
+                        <input type="email" placeholder="Email" id="contact-reg-email">
+                    </div>
+                </div>
+            </div>
+
+            <!-- NOTATKI -->
+            <div class="notes">
+                <h3>UWAGI I NOTATKI</h3>
+                <textarea id="notes-area" placeholder="Wprowadź swoje uwagi, notatki i obserwacje tutaj..."></textarea>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Dokument utworzony:</strong> 26 października 2025</p>
+            <p><strong>Ostatnia aktualizacja:</strong> 26 października 2025</p>
+            <p><strong>Wersja:</strong> 1.0</p>
+            <p style="margin-top: 15px;">Dr Izabela Załęska - Dyrektor NCKU</p>
+        </div>
+    </div>
+
+    <script>
+        // Update progress statistics
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const total = checkboxes.length;
+            const completed = document.querySelectorAll('input[type="checkbox"]:checked').length;
+            const pending = total - completed;
+            const percent = Math.round((completed / total) * 100);
+
+            document.getElementById('totalTasks').textContent = total;
+            document.getElementById('completedTasks').textContent = completed;
+            document.getElementById('pendingTasks').textContent = pending;
+            document.getElementById('progressPercent').textContent = percent + '%';
+            document.getElementById('progressBar').style.width = percent + '%';
+            document.getElementById('progressBar').textContent = percent + '%';
+
+            // Update checklist item styling
+            checkboxes.forEach(checkbox => {
+                const item = checkbox.closest('.checklist-item');
+                if (checkbox.checked) {
+                    item.classList.add('completed');
+                } else {
+                    item.classList.remove('completed');
+                }
+            });
+
+            // Save to localStorage
+            saveToLocalStorage();
+        }
+
+        // Toggle phase visibility
+        function togglePhase(header) {
+            const content = header.nextElementSibling;
+            header.classList.toggle('collapsed');
+
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        }
+
+        // Save progress to localStorage
+        function saveToLocalStorage() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const state = {};
+
+            checkboxes.forEach(checkbox => {
+                state[checkbox.id] = checkbox.checked;
+            });
+
+            // Save contact inputs
+            const inputs = document.querySelectorAll('input[type="text"], input[type="email"]');
+            inputs.forEach(input => {
+                if (input.id) {
+                    state[input.id] = input.value;
+                }
+            });
+
+            // Save notes
+            const notes = document.getElementById('notes-area');
+            if (notes) {
+                state['notes-area'] = notes.value;
+            }
+
+            localStorage.setItem('ncku-checklist-progress', JSON.stringify(state));
+        }
+
+        // Load progress from localStorage
+        function loadFromLocalStorage() {
+            const saved = localStorage.getItem('ncku-checklist-progress');
+            if (!saved) return;
+
+            const state = JSON.parse(saved);
+
+            Object.keys(state).forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    if (element.type === 'checkbox') {
+                        element.checked = state[id];
+                    } else {
+                        element.value = state[id];
+                    }
+                }
+            });
+
+            updateProgress();
+        }
+
+        // Save progress (manual)
+        function saveProgress() {
+            saveToLocalStorage();
+            alert('Postęp został zapisany! ✓');
+        }
+
+        // Load progress (manual)
+        function loadProgress() {
+            loadFromLocalStorage();
+            alert('Postęp został wczytany! ✓');
+        }
+
+        // Reset all progress
+        function resetProgress() {
+            if (confirm('Czy na pewno chcesz zresetować wszystkie dane? Ta operacja jest nieodwracalna.')) {
+                localStorage.removeItem('ncku-checklist-progress');
+                location.reload();
+            }
+        }
+
+        // Initialize on page load
+        window.addEventListener('load', () => {
+            loadFromLocalStorage();
+            updateProgress();
+        });
+
+        // Auto-save every 30 seconds
+        setInterval(saveToLocalStorage, 30000);
+    </script>
+</body>
+</html>
