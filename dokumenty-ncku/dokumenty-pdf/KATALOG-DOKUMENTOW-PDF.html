@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Dokumentów NCKU IAM Poland</title>
+    <style>
+        @media print {
+            body { margin: 0; padding: 20mm; }
+            .no-print { display: none !important; }
+            .page-break { page-break-after: always; }
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #000;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #003366;
+            padding-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 24pt;
+            margin: 0 0 10px 0;
+            color: #003366;
+            text-transform: uppercase;
+        }
+
+        .header h2 {
+            font-size: 16pt;
+            margin: 5px 0;
+            color: #333;
+        }
+
+        .metadata {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f5f5f5;
+            border-left: 4px solid #003366;
+        }
+
+        .metadata p {
+            margin: 5px 0;
+        }
+
+        h2 {
+            font-size: 16pt;
+            color: #003366;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #003366;
+            padding-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            font-size: 13pt;
+            color: #003366;
+            margin-top: 20px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #003366;
+            padding-bottom: 5px;
+        }
+
+        p, li {
+            font-size: 11pt;
+            text-align: justify;
+        }
+
+        .section {
+            margin: 20px 0;
+        }
+
+        .doc-item {
+            margin: 15px 0;
+            padding: 12px;
+            background: #f9f9f9;
+            border-left: 4px solid #003366;
+        }
+
+        .doc-item h4 {
+            margin: 0 0 8px 0;
+            color: #003366;
+            font-size: 12pt;
+        }
+
+        .doc-item p {
+            margin: 5px 0;
+            font-size: 10pt;
+            color: #666;
+        }
+
+        .doc-category {
+            background: #e3f2fd;
+            padding: 10px 15px;
+            margin: 20px 0;
+            border-left: 4px solid #2196F3;
+            font-weight: bold;
+            color: #1976D2;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        table th, table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            font-size: 10pt;
+        }
+
+        table th {
+            background: #003366;
+            color: white;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #003366;
+            font-size: 10pt;
+            color: #666;
+        }
+
+        .download-instruction {
+            background: #e3f2fd;
+            padding: 20px;
+            border: 2px solid #2196F3;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .download-instruction h3 {
+            color: #1976D2;
+            border: none;
+            margin-top: 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #003366;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 10px 5px;
+            cursor: pointer;
+            border: none;
+            font-size: 11pt;
+        }
+
+        .btn:hover {
+            background: #005599;
+        }
+
+        .stats-box {
+            background: #fff9e6;
+            padding: 15px;
+            border: 2px solid #ffc107;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .stats-box h3 {
+            margin: 0 0 10px 0;
+            border: none;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .stat-item {
+            padding: 10px;
+            background: white;
+            border: 1px solid #ddd;
+        }
+
+        .stat-number {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #003366;
+        }
+
+        .stat-label {
+            font-size: 9pt;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="no-print download-instruction">
+        <h3>📥 Jak pobrać ten dokument jako PDF?</h3>
+        <ol>
+            <li><strong>Kliknij przycisk poniżej</strong> lub naciśnij <kbd>Ctrl+P</kbd> (Windows) / <kbd>Cmd+P</kbd> (Mac)</li>
+            <li>W oknie drukowania wybierz <strong>"Zapisz jako PDF"</strong> lub <strong>"Microsoft Print to PDF"</strong></li>
+            <li>Kliknij <strong>"Zapisz"</strong> i wybierz lokalizację</li>
+        </ol>
+        <button class="btn" onclick="window.print()">🖨️ Drukuj / Zapisz jako PDF</button>
+    </div>
+
+    <div class="header">
+        <h1>Katalog Dokumentów</h1>
+        <h2>Niepubliczne Centrum Kształcenia Ustawicznego<br>IAM Poland</h2>
+    </div>
+
+    <div class="metadata">
+        <p><strong>Data wygenerowania:</strong> 26 października 2025 r.</p>
+        <p><strong>Status dokumentacji:</strong> Kompletna i gotowa do wpisu</p>
+        <p><strong>Wersja:</strong> 3.0</p>
+    </div>
+
+    <div class="stats-box">
+        <h3>Statystyki Dokumentacji</h3>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">21</div>
+                <div class="stat-label">Dokumentów ogółem</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Wypełnionych danymi</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15</div>
+                <div class="stat-label">Szablonów</div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Dane Firmy i NCKU</h2>
+
+    <div class="section">
+        <table>
+            <tr>
+                <th>Kategoria</th>
+                <th>Dane</th>
+            </tr>
+            <tr>
+                <td><strong>Nazwa pełna</strong></td>
+                <td>IAM - International Association of Mesotherapy Sp. z o.o.</td>
+            </tr>
+            <tr>
+                <td><strong>Adres</strong></td>
+                <td>ul. Stefana Kołaczkowskiego 4, 30-399 Kraków</td>
+            </tr>
+            <tr>
+                <td><strong>KRS</strong></td>
+                <td>0001104217</td>
+            </tr>
+            <tr>
+                <td><strong>NIP</strong></td>
+                <td>6762668277</td>
+            </tr>
+            <tr>
+                <td><strong>REGON</strong></td>
+                <td>528560167</td>
+            </tr>
+            <tr>
+                <td><strong>Dyrektor NCKU</strong></td>
+                <td>Dr n. med. Izabela Załęska</td>
+            </tr>
+            <tr>
+                <td><strong>Data rozpoczęcia NCKU</strong></td>
+                <td>31 marca 2026 r.</td>
+            </tr>
+            <tr>
+                <td><strong>Powierzchnia</strong></td>
+                <td>280 m²</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="page-break"></div>
+
+    <h2>📄 Dokumenty PDF do Pobrania</h2>
+
+    <div class="doc-category">
+        1. DOKUMENTY KLUCZOWE (PDF)
+    </div>
+
+    <div class="doc-item">
+        <h4>📋 Uchwała Zarządu nr 3/2025 - Powołanie Dyrektora NCKU</h4>
+        <p><strong>Plik:</strong> UCHWALA-ZARZADU-PDF.html</p>
+        <p><strong>Data:</strong> 15 kwietnia 2025 r.</p>
+        <p><strong>Opis:</strong> Uchwała powołująca Dr Izabelę Załęską na stanowisko Dyrektora NCKU z pełnym zakresem uprawnień i obowiązków</p>
+        <p><strong>Status:</strong> ✅ Wypełniona prawdziwymi danymi</p>
+    </div>
+
+    <div class="doc-item">
+        <h4>📜 Statut NCKU IAM Poland</h4>
+        <p><strong>Plik:</strong> STATUT-NCKU-PDF.html</p>
+        <p><strong>Data zatwierdzenia:</strong> 15 stycznia 2025 r.</p>
+        <p><strong>Opis:</strong> Kompletny statut NCKU określający cele, strukturę, organy i zasady działania</p>
+        <p><strong>Status:</strong> ✅ Wypełniony prawdziwymi danymi</p>
+    </div>
+
+    <div class="doc-item">
+        <h4>💰 Regulamin Funduszu MDR Compliance</h4>
+        <p><strong>Plik:</strong> REGULAMIN-FUNDUSZ-MDR-PDF.html</p>
+        <p><strong>Data zatwierdzenia:</strong> 20 stycznia 2025 r.</p>
+        <p><strong>Opis:</strong> Innowacyjny mechanizm wsparcia finansowego dla gabinetów medycznych (zwrot do 50%, max. 10.000 PLN)</p>
+        <p><strong>Status:</strong> ✅ Wypełniony prawdziwymi danymi</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <h2>📁 Kompletna Lista Dokumentów</h2>
+
+    <div class="doc-category">
+        2. DOKUMENTY ORGANIZACYJNE (6 dokumentów wypełnionych)
+    </div>
+
+    <table>
+        <tr>
+            <th>Nr</th>
+            <th>Nazwa dokumentu</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Statut NCKU IAM Poland</td>
+            <td>✅ Wypełniony</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Regulamin organizacyjny NCKU</td>
+            <td>✅ Wypełniony</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Regulamin Funduszu MDR Compliance</td>
+            <td>✅ Wypełniony</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Program kształcenia MDR</td>
+            <td>✅ Wypełniony</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Program kształcenia ISO 13485</td>
+            <td>✅ Wypełniony</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Program kształcenia Załącznik XVI</td>
+            <td>✅ Wypełniony</td>
+        </tr>
+    </table>
+
+    <div class="doc-category">
+        3. SZABLONY PODSTAWOWE (15 dokumentów)
+    </div>
+
+    <table>
+        <tr>
+            <th>Nr</th>
+            <th>Nazwa szablonu</th>
+            <th>Przeznaczenie</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Uchwała powołania Dyrektora</td>
+            <td>Formalne powołanie</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Umowa o pracę Dyrektor</td>
+            <td>Zatrudnienie</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Umowa z wykładowcą</td>
+            <td>Współpraca z kadrą</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Certyfikat ukończenia</td>
+            <td>Dla uczestników</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Regulamin rekrutacji</td>
+            <td>Zasady naboru</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Regulamin szkoleń</td>
+            <td>Zasady kształcenia</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Regulamin pracy NCKU</td>
+            <td>Wewnętrzne zasady</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Umowa szkoleniowa z uczestnikiem</td>
+            <td>Kontrakt</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Świadectwo ukończenia kursu</td>
+            <td>Dokument formalny</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Ankieta ewaluacyjna</td>
+            <td>Ocena jakości</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>Protokół egzaminu</td>
+            <td>Weryfikacja wiedzy</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>Zaświadczenie o ukończeniu</td>
+            <td>Potwierdzenie</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>Karta kwalifikacyjna uczestnika</td>
+            <td>Dane osobowe</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>Dziennik zajęć</td>
+            <td>Rejestr aktywności</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>Lista obecności</td>
+            <td>Kontrola frekwencji</td>
+        </tr>
+    </table>
+
+    <div class="page-break"></div>
+
+    <h2>🎨 Wzory Graficzne</h2>
+
+    <div class="section">
+        <table>
+            <tr>
+                <th>Element graficzny</th>
+                <th>Format</th>
+                <th>Zastosowanie</th>
+            </tr>
+            <tr>
+                <td>Logo NCKU</td>
+                <td>SVG</td>
+                <td>Pieczęć, dokumenty oficjalne</td>
+            </tr>
+            <tr>
+                <td>Nagłówek firmowy</td>
+                <td>SVG (A4)</td>
+                <td>Korespondencja oficjalna</td>
+            </tr>
+            <tr>
+                <td>Certyfikat ukończenia</td>
+                <td>SVG</td>
+                <td>Dla uczestników szkoleń</td>
+            </tr>
+            <tr>
+                <td>Dyplom</td>
+                <td>SVG</td>
+                <td>Programy długoterminowe</td>
+            </tr>
+            <tr>
+                <td>Pieczęć szkoły</td>
+                <td>SVG</td>
+                <td>Dokumenty formalne</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>✅ Kluczowe Informacje</h2>
+
+    <div class="section">
+        <h3>Specjalizacje NCKU:</h3>
+        <ul>
+            <li><strong>MDR (UE) 2017/745</strong> - Rozporządzenie o wyrobach medycznych</li>
+            <li><strong>ISO 13485:2016</strong> - Systemy zarządzania jakością</li>
+            <li><strong>Załącznik XVI MDR</strong> - Wyroby estetyczne</li>
+            <li><strong>Medycyna estetyczna</strong> - Mezoterapia i zabiegi</li>
+            <li><strong>Fundusz MDR Compliance</strong> - Wsparcie finansowe (do 10.000 PLN zwrotu)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>Cele strategiczne 2025-2026:</h3>
+        <table>
+            <tr>
+                <th>Cel</th>
+                <th>Termin</th>
+            </tr>
+            <tr>
+                <td>Wpis do ewidencji</td>
+                <td>Do 31 grudnia 2025 r.</td>
+            </tr>
+            <tr>
+                <td>Akredytacja MDR</td>
+                <td>Do 30 czerwca 2026 r.</td>
+            </tr>
+            <tr>
+                <td>Start szkoleń</td>
+                <td>31 marca 2026 r. (min. 50 uczestników)</td>
+            </tr>
+            <tr>
+                <td>Budowa zespołu</td>
+                <td>Min. 3 pracowników + 10 wykładowców + Rada Naukowa (5 członków)</td>
+            </tr>
+            <tr>
+                <td>Przychody rok 1</td>
+                <td>Min. 500.000 PLN, rentowność 15%</td>
+            </tr>
+            <tr>
+                <td>Liczba uczestników</td>
+                <td>Min. 200 osób, 150 certyfikatów</td>
+            </tr>
+            <tr>
+                <td>Fundusz MDR Compliance</td>
+                <td>Uruchomienie do 30.06.2026 (min. 20 beneficjentów)</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="footer">
+        <h4>DANE FIRMY</h4>
+        <p><strong>IAM - International Association of Mesotherapy Sp. z o.o.</strong></p>
+        <p>ul. Stefana Kołaczkowskiego 4, 30-399 Kraków</p>
+        <p>KRS: 0001104217 | NIP: 6762668277 | REGON: 528560167</p>
+        <p>Tel.: +48 12 XXX XX XX | Email: sekretariat@iam-poland.pl</p>
+        <p style="margin-top: 15px;"><strong>Katalog wygenerowany:</strong> 26 października 2025 r.</p>
+        <p><strong>Wersja dokumentacji:</strong> 3.0 - Kompletna i gotowa do wpisu</p>
+    </div>
+</body>
+</html>

@@ -60,6 +60,13 @@ Procedury dokumenty
 - `naglowek-firmowy.svg` - Papier firmowy (szablon)
 - ✅ **`naglowek-firmowy-iam-poland.svg`** - **Papier firmowy z pełnymi danymi IAM Poland!**
 
+**E. 📄 Dokumenty PDF** (`dokumenty-pdf/`)
+- ✅ **`UCHWALA-ZARZADU-PDF.html`** - **Uchwała powołania Dyrektora (gotowa do druku jako PDF)**
+- ✅ **`STATUT-NCKU-PDF.html`** - **Statut NCKU (gotowy do druku jako PDF)**
+- ✅ **`REGULAMIN-FUNDUSZ-MDR-PDF.html`** - **Regulamin Funduszu MDR (gotowy do druku jako PDF)**
+- ✅ **`KATALOG-DOKUMENTOW-PDF.html`** - **Kompletny katalog wszystkich 21 dokumentów**
+- 📖 **`README.md`** - Instrukcja jak pobierać dokumenty jako PDF
+
 **📖 INDEKS:** `dokumenty-ncku/INDEX.md` - Szczegółowy przewodnik po wszystkich dokumentach
 
 ---
@@ -104,9 +111,20 @@ Procedury dokumenty
 4. **Pakiet dokumentów NCKU:** 📦
    - **START TUTAJ:** Otwórz `dokumenty-ncku/INDEX.md` - pełny przewodnik
    - Wszystkie szablony gotowe do użycia
-   - 15 dokumentów podzielonych na 4 kategorie
+   - 21 dokumentów podzielonych na 5 kategorii
    - Instrukcje użycia dla każdego dokumentu
    - Harmonogram użycia dokumentów według faz
+
+5. **Dokumenty PDF (gotowe do pobrania):** 📄
+   - **START TUTAJ:** Otwórz `dokumenty-ncku/dokumenty-pdf/README.md`
+   - Otwórz plik `.html` w przeglądarce
+   - Kliknij "Drukuj / Zapisz jako PDF" lub naciśnij `Ctrl+P`
+   - Wybierz "Zapisz jako PDF" w oknie drukowania
+   - **Dostępne dokumenty:**
+     - Uchwała Zarządu nr 3/2025 - Powołanie Dyrektora
+     - Statut NCKU IAM Poland
+     - Regulamin Funduszu MDR Compliance
+     - Katalog wszystkich 21 dokumentów
 
 ### Informacje kontaktowe
 
@@ -135,4 +153,4 @@ Procedury dokumenty
 ---
 
 **Ostatnia aktualizacja:** 26 października 2025
-**Wersja:** 3.0 (dodano dokumenty wypełnione prawdziwymi danymi IAM Poland + Statut NCKU + Regulamin Funduszu MDR Compliance)
+**Wersja:** 3.1 (dodano dokumenty PDF gotowe do pobrania: Uchwała Zarządu, Statut NCKU, Regulamin Funduszu MDR + Katalog wszystkich dokumentów)
