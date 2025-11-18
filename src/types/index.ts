@@ -43,6 +43,14 @@ export interface User {
   lastLogin?: Date;
 }
 
+export interface KnowHow {
+  description: string;
+  value: number; // wartość w PLN
+  status: 'pending' | 'approved' | 'valued';
+  valuationDate?: Date;
+  valuedBy?: string; // ekspert/rzeczoznawca
+}
+
 export interface Shareholder {
   id: string;
   name: string;
@@ -51,9 +59,11 @@ export interface Shareholder {
   email: string;
   phone?: string;
   address?: string;
+  pesel?: string;
   kycStatus: 'verified' | 'pending' | 'rejected';
   type: 'individual' | 'company';
   addedAt: Date;
+  knowHow?: KnowHow; // opcjonalne - aport niepieniężny
 }
 
 export interface Transaction {

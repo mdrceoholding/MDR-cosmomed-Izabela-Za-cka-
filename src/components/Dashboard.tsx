@@ -14,6 +14,7 @@ const Dashboard: React.FC = () => {
     t => new Date(t.date) > new Date(Date.now() - 30 * 24 * 60 * 60 * 1000)
   ).length;
   const pendingDocuments = mockDocuments.filter(d => d.status === 'pending').length;
+  const totalKnowHowValue = mockShareholders.reduce((sum, sh) => sum + (sh.knowHow?.value || 0), 0);
 
   // Prepare pie chart data
   const pieChartData = mockShareholders.map(sh => ({
@@ -50,11 +51,11 @@ const Dashboard: React.FC = () => {
       color: 'purple'
     },
     {
-      title: 'Dokumenty do weryfikacji',
-      value: pendingDocuments,
-      change: '-2',
-      changeType: 'decrease',
-      icon: 'fa-file-alt',
+      title: 'Know-how Assets',
+      value: formatCurrency(totalKnowHowValue),
+      change: 'Nowy',
+      changeType: 'increase',
+      icon: 'fa-lightbulb',
       color: 'yellow'
     }
   ];

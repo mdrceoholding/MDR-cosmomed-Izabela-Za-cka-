@@ -101,6 +101,25 @@ export const mockShareholders: Shareholder[] = [
     kycStatus: 'verified',
     type: 'individual',
     addedAt: new Date('2025-02-01')
+  },
+  {
+    id: 's4',
+    name: 'Artur Fijołek',
+    shares: 0, // na razie 0, akcje zostaną przydzielone po wniesieniu aportu
+    percentage: 0,
+    email: 'artur.fijolek@mdrphilosophy.pl',
+    phone: '+48 600 555 666',
+    address: 'ul. Brudko 13, Warszawa',
+    pesel: '80010112345',
+    kycStatus: 'pending',
+    type: 'individual',
+    addedAt: new Date('2025-11-18'),
+    knowHow: {
+      description: 'Know-how w zakresie ZIP Console™ - kompleksowej dokumentacji technicznej, procedur operacyjnych oraz baz danych',
+      value: 13999000, // 13.999.000 PLN
+      status: 'pending', // oczekuje na wycenę i zatwierdzenie
+      valuationDate: new Date('2025-11-18')
+    }
   }
 ];
 
@@ -166,6 +185,15 @@ export const mockTransactions: Transaction[] = [
 // Mock Timeline Events
 export const mockTimelineEvents: TimelineEvent[] = [
   {
+    id: 'tl0',
+    type: 'document',
+    title: 'Wniesienie aportu know-how',
+    description: 'Artur Fijołek - ZIP Console™ (wartość: 13.999.000 PLN)',
+    date: new Date('2025-11-18'),
+    icon: 'fa-lightbulb',
+    color: 'bg-yellow-500'
+  },
+  {
     id: 'tl1',
     type: 'emission',
     title: 'Emisja nowych akcji',
@@ -205,6 +233,15 @@ export const mockTimelineEvents: TimelineEvent[] = [
 
 // Mock Documents
 export const mockDocuments: Document[] = [
+  {
+    id: 'd0',
+    title: 'Uchwała w sprawie wniesienia wkładu niepieniężnego (know-how)',
+    type: 'resolution',
+    status: DocumentStatus.PENDING,
+    createdBy: 'Dorota Płoskoń',
+    createdAt: new Date('2025-11-18'),
+    fileUrl: '/documents/resolution-knowhow-fijolek.pdf'
+  },
   {
     id: 'd1',
     title: 'Uchwała nr 1/2025 - Zatwierdzenie sprawozdań',

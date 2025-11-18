@@ -8,6 +8,7 @@ import ForgotPassword from './components/auth/ForgotPassword';
 import Header from './components/layout/Header';
 import Sidebar from './components/layout/Sidebar';
 import Dashboard from './components/Dashboard';
+import Shareholders from './components/Shareholders';
 import UsersList from './components/users/UsersList';
 import UserProfile from './components/users/UserProfile';
 import { DashboardSkeleton } from './components/LoadingSkeleton';
@@ -84,7 +85,7 @@ const MainApp: React.FC = () => {
       case 'profile':
         return <UserProfile />;
       case 'shareholders':
-        return <ShareholdersView />;
+        return <Shareholders />;
       case 'transactions':
         return <TransactionsView />;
       case 'documents':
@@ -131,14 +132,6 @@ const MainApp: React.FC = () => {
 };
 
 // Placeholder views
-const ShareholdersView: React.FC = () => (
-  <div className="bg-gray-800 rounded-lg p-8 text-center">
-    <i className="fas fa-users text-6xl text-blue-400 mb-4"></i>
-    <h2 className="text-2xl font-bold text-white mb-2">Akcjonariusze</h2>
-    <p className="text-gray-400">Zarządzanie akcjonariuszami - w budowie</p>
-  </div>
-);
-
 const TransactionsView: React.FC = () => (
   <div className="bg-gray-800 rounded-lg p-8 text-center">
     <i className="fas fa-exchange-alt text-6xl text-green-400 mb-4"></i>
