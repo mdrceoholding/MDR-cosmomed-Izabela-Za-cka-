@@ -1,5 +1,8 @@
 import { useState } from 'react';
+import { Toaster } from 'react-hot-toast';
 import Sidebar from './components/Sidebar';
+import Dashboard from './components/Dashboard';
+import Shareholders from './components/Shareholders';
 import DocumentTemplates from './components/DocumentTemplates';
 import DocumentEditor from './components/DocumentEditor';
 import { DocumentTemplate } from './types';
@@ -27,9 +30,9 @@ function App() {
     // Otherwise show the selected view
     switch (currentView) {
       case 'dashboard':
-        return <DashboardView />;
+        return <Dashboard />;
       case 'shareholders':
-        return <ShareholdersView />;
+        return <Shareholders />;
       case 'cap-table':
         return <CapTableView />;
       case 'documents':
@@ -39,140 +42,43 @@ function App() {
       case 'settings':
         return <SettingsView />;
       default:
-        return <DashboardView />;
+        return <Dashboard />;
     }
   };
 
   return (
-    <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
-      <Sidebar currentView={currentView} onNavigate={setCurrentView} />
-      <main className="flex-1 overflow-auto">
-        {renderView()}
-      </main>
-    </div>
-  );
-}
-
-// Placeholder Views
-function DashboardView() {
-  return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Dashboard</h1>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm text-gray-500 dark:text-gray-400">Akcjonariusze</p>
-              <p className="text-3xl font-bold text-gray-900 dark:text-white mt-2">{shareholders.length}</p>
-            </div>
-            <div className="bg-blue-100 dark:bg-blue-900 rounded-full p-3">
-              <i className="fas fa-users text-2xl text-blue-600 dark:text-blue-300"></i>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm text-gray-500 dark:text-gray-400">Łączna liczba akcji</p>
-              <p className="text-3xl font-bold text-gray-900 dark:text-white mt-2">1,000</p>
-            </div>
-            <div className="bg-green-100 dark:bg-green-900 rounded-full p-3">
-              <i className="fas fa-chart-line text-2xl text-green-600 dark:text-green-300"></i>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm text-gray-500 dark:text-gray-400">Wzory dokumentów</p>
-              <p className="text-3xl font-bold text-gray-900 dark:text-white mt-2">10</p>
-            </div>
-            <div className="bg-purple-100 dark:bg-purple-900 rounded-full p-3">
-              <i className="fas fa-file-invoice text-2xl text-purple-600 dark:text-purple-300"></i>
-            </div>
-          </div>
-        </div>
+    <>
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          duration: 3000,
+          style: {
+            background: '#1f2937',
+            color: '#fff',
+            borderRadius: '8px',
+            padding: '16px',
+          },
+          success: {
+            iconTheme: {
+              primary: '#10b981',
+              secondary: '#fff',
+            },
+          },
+          error: {
+            iconTheme: {
+              primary: '#ef4444',
+              secondary: '#fff',
+            },
+          },
+        }}
+      />
+      <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
+        <Sidebar currentView={currentView} onNavigate={setCurrentView} />
+        <main className="flex-1 overflow-auto">
+          {renderView()}
+        </main>
       </div>
-
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-        <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Informacje o spółce</h2>
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <p className="text-sm text-gray-500 dark:text-gray-400">Nazwa</p>
-            <p className="font-medium text-gray-900 dark:text-white">{companyData.name}</p>
-          </div>
-          <div>
-            <p className="text-sm text-gray-500 dark:text-gray-400">KRS</p>
-            <p className="font-medium text-gray-900 dark:text-white">{companyData.krs}</p>
-          </div>
-          <div>
-            <p className="text-sm text-gray-500 dark:text-gray-400">NIP</p>
-            <p className="font-medium text-gray-900 dark:text-white">{companyData.nip}</p>
-          </div>
-          <div>
-            <p className="text-sm text-gray-500 dark:text-gray-400">Adres</p>
-            <p className="font-medium text-gray-900 dark:text-white">{companyData.address}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ShareholdersView() {
-  return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Akcjonariusze</h1>
-
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden">
-        <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-          <thead className="bg-gray-50 dark:bg-gray-700">
-            <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                Akcjonariusz
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                Typ
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                Liczba akcji
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                Udział (%)
-              </th>
-            </tr>
-          </thead>
-          <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
-            {shareholders.map((shareholder) => (
-              <tr key={shareholder.id}>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm font-medium text-gray-900 dark:text-white">{shareholder.name}</div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400">{shareholder.address}</div>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                    shareholder.type === 'physical'
-                      ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
-                      : 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200'
-                  }`}>
-                    {shareholder.type === 'physical' ? 'Osoba fizyczna' : 'Osoba prawna'}
-                  </span>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">
-                  {shareholder.shares}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">
-                  {shareholder.percentage}%
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
+    </>
   );
 }
 
