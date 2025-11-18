@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDR Certification - Digital Badge</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap');
+
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        /* Square Badge - LinkedIn/Email Signature */
+        .badge-square {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #1E3A8A 0%, #0E7490 100%);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .badge-square::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(180deg); }
+        }
+
+        .badge-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .badge-title {
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .badge-subtitle {
+            font-size: 10px;
+            font-weight: 600;
+            opacity: 0.9;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-year {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            font-weight: 700;
+            background: rgba(255,255,255,0.2);
+            padding: 3px 8px;
+            border-radius: 5px;
+        }
+
+        /* Circular Badge - Social Media */
+        .badge-circle {
+            width: 180px;
+            height: 180px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 5px solid #D4AF37;
+            position: relative;
+        }
+
+        .badge-circle-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid #1E3A8A;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .badge-circle .badge-icon {
+            font-size: 40px;
+            color: #1E3A8A;
+            margin-bottom: 8px;
+        }
+
+        .badge-circle .badge-title {
+            font-size: 12px;
+            color: #1E3A8A;
+            margin-bottom: 3px;
+        }
+
+        .badge-circle .badge-subtitle {
+            font-size: 8px;
+            color: #0E7490;
+        }
+
+        /* Horizontal Badge - Email Footer */
+        .badge-horizontal {
+            width: 300px;
+            height: 80px;
+            background: linear-gradient(90deg, #1E3A8A 0%, #0E7490 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            color: white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .badge-horizontal-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .badge-horizontal .badge-icon {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .badge-horizontal-text {
+            text-align: left;
+        }
+
+        .badge-horizontal .badge-title {
+            font-size: 13px;
+            margin-bottom: 3px;
+        }
+
+        .badge-horizontal .badge-subtitle {
+            font-size: 9px;
+        }
+
+        .badge-checkmark {
+            font-size: 24px;
+            background: rgba(255,255,255,0.2);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Mini Badge - Signature/Footer */
+        .badge-mini {
+            width: 120px;
+            height: 120px;
+            background: #1E3A8A;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 3px solid #D4AF37;
+        }
+
+        .badge-mini .badge-icon {
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        .badge-mini .badge-title {
+            font-size: 9px;
+            margin-bottom: 2px;
+        }
+
+        .badge-mini .badge-subtitle {
+            font-size: 7px;
+        }
+
+        /* Ribbon Badge */
+        .badge-ribbon {
+            width: 150px;
+            height: 180px;
+            background: linear-gradient(135deg, #1E3A8A 0%, #0E7490 100%);
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 15px 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .badge-ribbon::after {
+            content: "";
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 75px solid #0E7490;
+            border-right: 75px solid #0E7490;
+            border-bottom: 30px solid transparent;
+        }
+
+        .badge-ribbon .badge-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+            background: rgba(255,255,255,0.2);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .badge-ribbon .badge-title {
+            font-size: 11px;
+            margin-bottom: 5px;
+        }
+
+        .badge-ribbon .badge-subtitle {
+            font-size: 8px;
+        }
+
+        /* Container for Examples */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .example-item {
+            text-align: center;
+        }
+
+        .example-title {
+            font-size: 14px;
+            color: #1E3A8A;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        .example-desc {
+            font-size: 11px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        h1 {
+            color: #1E3A8A;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .download-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border-left: 4px solid #0E7490;
+        }
+
+        .download-section h3 {
+            color: #1E3A8A;
+            margin-bottom: 15px;
+        }
+
+        .download-section ul {
+            line-height: 1.8;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MDR 2017/745 - Digital Badges</h1>
+        <p class="subtitle">Miniaturowe odznaki certyfikacji do użytku cyfrowego</p>
+
+        <div class="examples-grid">
+            <!-- Square Badge -->
+            <div class="example-item">
+                <div class="badge-square">
+                    <div class="badge-icon">⚕</div>
+                    <div class="badge-title">MDR CERTIFIED</div>
+                    <div class="badge-subtitle">Medical Device<br>Regulation 2017/745</div>
+                    <div class="badge-year">2025</div>
+                </div>
+                <div class="example-title">Square Badge</div>
+                <div class="example-desc">Idealny do LinkedIn, email signature</div>
+            </div>
+
+            <!-- Circular Badge -->
+            <div class="example-item">
+                <div class="badge-circle">
+                    <div class="badge-circle-inner">
+                        <div class="badge-icon">⚕</div>
+                        <div class="badge-title">MDR 2017/745</div>
+                        <div class="badge-subtitle">CERTIFIED<br>PROFESSIONAL</div>
+                    </div>
+                </div>
+                <div class="example-title">Circular Badge</div>
+                <div class="example-desc">Social media profile, website</div>
+            </div>
+
+            <!-- Ribbon Badge -->
+            <div class="example-item">
+                <div class="badge-ribbon">
+                    <div class="badge-icon">⚕</div>
+                    <div class="badge-title">MDR<br>CERTIFIED</div>
+                    <div class="badge-subtitle">Medical Device<br>Regulation<br>2017/745</div>
+                </div>
+                <div class="example-title">Ribbon Badge</div>
+                <div class="example-desc">Certificates, presentations</div>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px;">
+            <h2 style="color: #1E3A8A; margin-bottom: 20px;">Dodatkowe Warianty</h2>
+
+            <div style="display: flex; gap: 30px; flex-wrap: wrap; align-items: center; justify-content: center;">
+                <!-- Horizontal Badge -->
+                <div>
+                    <div class="badge-horizontal">
+                        <div class="badge-horizontal-left">
+                            <div class="badge-icon">⚕</div>
+                            <div class="badge-horizontal-text">
+                                <div class="badge-title">MDR CERTIFIED</div>
+                                <div class="badge-subtitle">Medical Device Regulation 2017/745</div>
+                            </div>
+                        </div>
+                        <div class="badge-checkmark">✓</div>
+                    </div>
+                    <div class="example-title">Horizontal Badge</div>
+                    <div class="example-desc">Email footer, website banner</div>
+                </div>
+
+                <!-- Mini Badge -->
+                <div>
+                    <div class="badge-mini">
+                        <div class="badge-icon">⚕</div>
+                        <div class="badge-title">MDR<br>CERTIFIED</div>
+                        <div class="badge-subtitle">2017/745</div>
+                    </div>
+                    <div class="example-title">Mini Badge</div>
+                    <div class="example-desc">Small signatures, icons</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="download-section">
+            <h3>📥 Instrukcja Użycia Digital Badges</h3>
+            <ul>
+                <li><strong>LinkedIn:</strong> Użyj Square Badge (200x200px) w sekcji "Licencje i certyfikaty"</li>
+                <li><strong>Email Signature:</strong> Horizontal Badge (300x80px) na końcu podpisu</li>
+                <li><strong>Social Media:</strong> Circular Badge (180x180px) jako zdjęcie profilowe lub post</li>
+                <li><strong>Website:</strong> Ribbon lub Square Badge w sekcji "O nas" / "Certyfikaty"</li>
+                <li><strong>CV/Portfolio:</strong> Mini Badge (120x120px) w nagłówku lub stopce</li>
+            </ul>
+        </div>
+
+        <div class="download-section" style="margin-top: 20px; border-left-color: #D4AF37;">
+            <h3>🎨 Personalizacja Badges</h3>
+            <ul>
+                <li><strong>Imię i nazwisko:</strong> Dodaj poniżej "CERTIFIED" w badge'ach Square i Circular</li>
+                <li><strong>Data certyfikacji:</strong> Zmień rok "2025" na aktualny</li>
+                <li><strong>Numer certyfikatu:</strong> Dodaj mały tekst z numerem MDR-CERT-2025-XXXX</li>
+                <li><strong>Link weryfikacji:</strong> Zamień badge w link do strony weryfikacji certyfikatu</li>
+                <li><strong>Kolory firmowe:</strong> Dostosuj gradienty (#1E3A8A, #0E7490) do brandingu</li>
+            </ul>
+        </div>
+
+        <div class="download-section" style="margin-top: 20px; border-left-color: #4caf50;">
+            <h3>💾 Eksport do Użycia</h3>
+            <p style="margin-bottom: 10px;"><strong>Aby zapisać badge jako obraz:</strong></p>
+            <ol style="line-height: 1.8;">
+                <li>Otwórz plik HTML w przeglądarce</li>
+                <li>Kliknij prawym przyciskiem na wybrany badge</li>
+                <li>Wybierz "Inspect Element" (Chrome) lub "Zbadaj element" (Firefox)</li>
+                <li>Użyj screenshot tool lub:
+                    <ul style="margin-top: 5px;">
+                        <li>Windows: Narzędzie wycinania (Snipping Tool)</li>
+                        <li>Mac: Cmd + Shift + 4</li>
+                        <li>Online: Użyj narzędzi typu "HTML to PNG Converter"</li>
+                    </ul>
+                </li>
+                <li>Zapisz jako PNG z przezroczystym tłem (jeśli potrzebne)</li>
+            </ol>
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #1E3A8A 0%, #0E7490 100%); color: white; border-radius: 8px; text-align: center;">
+            <h3 style="margin-bottom: 10px; color: white;">✨ Professional Digital Badges</h3>
+            <p style="margin: 0; opacity: 0.9;">
+                Zwiększ widoczność swojej certyfikacji MDR w środowisku cyfrowym!
+            </p>
+        </div>
+    </div>
+</body>
+</html>
