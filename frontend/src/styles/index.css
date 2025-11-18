@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  body {
+    @apply font-sans antialiased;
+  }
+
+  html,
+  body,
+  #root {
+    @apply h-full w-full m-0 p-0;
+  }
+
+  /* Custom scrollbar for dark theme */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-surface;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-dark-border rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-700;
+  }
+}
+
+@layer components {
+  /* Button styles */
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-dark-elevated hover:bg-dark-border text-dark-text font-medium py-3 px-6 rounded-xl transition-all duration-200 border border-dark-border;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white font-medium py-3 px-6 rounded-xl transition-all duration-200;
+  }
+
+  .btn-ghost {
+    @apply text-dark-text-secondary hover:text-dark-text hover:bg-dark-elevated font-medium py-2 px-4 rounded-lg transition-all duration-200;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 rounded-xl transition-all duration-200 shadow-lg;
+  }
+
+  /* Input styles */
+  .input-primary {
+    @apply bg-dark-elevated border border-dark-border text-dark-text rounded-lg px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-dark-surface border border-dark-border rounded-2xl p-6 shadow-lg;
+  }
+
+  .card-elevated {
+    @apply bg-dark-elevated border border-dark-border rounded-2xl p-6 shadow-xl;
+  }
+
+  /* Breathing circle animation */
+  .breathing-circle {
+    @apply rounded-full;
+    animation: breathe 8s ease-in-out infinite;
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    @apply bg-dark-surface/80 backdrop-blur-xl border border-dark-border/50;
+  }
+
+  /* Section spacing */
+  .section {
+    @apply py-12 px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-gold-400;
+  }
+
+  .bg-gradient-primary {
+    @apply bg-gradient-to-br from-primary-950 via-dark-bg to-dark-bg;
+  }
+
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
