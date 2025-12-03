@@ -1,0 +1,66 @@
+═══════════════════════════════════════════════════════════════════════
+                     KARTA ZLECENIA WLEWU DOŻYLNEGO
+═══════════════════════════════════════════════════════════════════════
+
+Pacjent: _____________________________  PESEL: _____________________
+Data wlewu: __________________   Godzina rozpoczęcia: _____________
+
+
+ZLECENIE LEKARSKIE – PROCEDURA INFUZYJNA
+─────────────────────────────────────────────────────────────────────
+
+Nazwa procedury: __________________________________________________
+
+
+PRODUKTY LECZNICZE DO PODANIA
+─────────────────────────────────────────────────────────────────────
+
+1. Nazwa leku: ___________________________________________________
+   Dawka: ____________   Objętość: ____________  Nr serii: _______
+   Data ważności: ____________   Droga podania: IV □  IM □
+
+2. Nazwa leku: ___________________________________________________
+   Dawka: ____________   Objętość: ____________  Nr serii: _______
+   Data ważności: ____________   Droga podania: IV □  IM □
+
+3. Nazwa leku: ___________________________________________________
+   Dawka: ____________   Objętość: ____________  Nr serii: _______
+   Data ważności: ____________   Droga podania: IV □  IM □
+
+4. Nazwa leku: ___________________________________________________
+   Dawka: ____________   Objętość: ____________  Nr serii: _______
+   Data ważności: ____________   Droga podania: IV □  IM □
+
+
+ROZCIEŃCZALNIK
+─────────────────────────────────────────────────────────────────────
+
+□ 0,9% NaCl       Objętość: _________ ml    Nr serii: ___________
+□ Ringer          Objętość: _________ ml    Nr serii: ___________
+□ Glukoza 5%      Objętość: _________ ml    Nr serii: ___________
+□ Inny: _________  Objętość: _________ ml    Nr serii: ___________
+
+Końcowa objętość worka infuzyjnego: ____________ ml
+
+
+SPOSÓB PODANIA
+─────────────────────────────────────────────────────────────────────
+
+□ Pompa infuzyjna    Prędkość: _________ ml/h
+□ Grawitacyjnie      Czas podania: _________ min/godz
+
+Przewidywany czas trwania wlewu: _________________________________
+
+
+UWAGI SPECJALNE
+─────────────────────────────────────────────────────────────────────
+
+□ Konieczność testu dawki próbnej
+□ Leki ratunkowe przy łóżku pacjenta (adrenalinα, kortykosteroidy)
+□ Obserwacja wzmożona przez _________ min po zakończeniu
+□ Inne: __________________________________________________________
+  _________________________________________________________________
+
+
+───────────────────────────────────────────────────────────────────────
+Data i podpis lekarza zlecającego         Pieczątka
