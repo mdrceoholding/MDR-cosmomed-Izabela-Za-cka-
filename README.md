@@ -13,6 +13,7 @@ MDR-cosmomed-Izabela-Za-cka-/
 ├── compliance-mdr/                          # 🆕 Główna dokumentacja compliance
 │   ├── KOMPLETNY-KOD-OPERACYJNY.md         # Pełna oferta MDR + biznesplan
 │   ├── EXECUTIVE-SUMMARY.md                 # Streszczenie dla decydentów
+│   ├── REVENUE-PROJECTIONS-2025-2026.csv   # Projekcje finansowe (Excel-ready)
 │   │
 │   ├── templates/                           # Szablony dokumentów medycznych
 │   │   ├── FORMULARZ-ZGODY-PACJENTA.md     # Świadoma zgoda (MDR + RODO)
@@ -20,6 +21,15 @@ MDR-cosmomed-Izabela-Za-cka-/
 │   │
 │   ├── dokumenty/                           # Dodatkowe dokumenty (planned)
 │   └── procedures/                          # Procedury operacyjne (planned)
+│
+├── web-app/                                 # 🌐 Aplikacja webowa MDR Philosophy
+│   ├── public/
+│   │   └── index.html                       # Standalone HTML website (gotowa!)
+│   ├── src/
+│   │   └── MDRPhilosophyWebsite.jsx        # React component (zaawansowana)
+│   ├── docs/
+│   │   └── FUNKCJONALNOSC.md               # Pełna dokumentacja funkcjonalności
+│   └── README.md                            # Instrukcje uruchomienia
 │
 ├── pieczec-szkolna.svg                      # Wzór pieczęci IAM POLAND
 ├── wzor-pieczeci.html                       # Podgląd pieczęci (interaktywny)
@@ -109,6 +119,57 @@ Sekcje:
 - Blockchain verification
 
 **Zgodność:** MDR (UE) 2017/745, standardy kliniczne
+
+---
+
+## 🌐 Aplikacja Webowa
+
+### 5️⃣ [MDR Philosophy Website](web-app/)
+**Pełna platforma webowa + landing page**
+
+**Dwie wersje:**
+
+#### Wersja HTML (Standalone)
+- **Lokalizacja:** [web-app/public/index.html](web-app/public/index.html)
+- **Zero dependencies** - otwórz w przeglądarce i działa!
+- **Instant preview** - < 1s ładowanie
+- **SEO-friendly** - statyczny HTML
+- **Responsive** - mobile + desktop
+
+#### Wersja React (Zaawansowana)
+- **Lokalizacja:** [web-app/src/MDRPhilosophyWebsite.jsx](web-app/src/)
+- **Interaktywny quiz** - ocena compliance MDR
+- **Kalkulator ROI** - obliczanie zwrotu z inwestycji
+- **System bookingu** - 3-stepowa rezerwacja konsultacji
+- **Blog z filtrowaniem** - 12 artykułów w kategoriach
+- **Szczegółowe case studies** - timeline + wykresy + testimonials
+- **FAQ accordion** - 8 pytań w kategoriach
+
+**Sekcje:**
+1. Hero (value proposition + stats)
+2. O Nas (zespół, struktura, misja)
+3. Usługi (4 pakiety: Audyt, Standard, Premium, Franczyza)
+4. Blog (12 postów: regulations, courses, case studies)
+5. Ocena Compliance (interactive quiz z rekomendacją pakietu)
+6. Case Studies (3 szczegółowe: Estetic Group, BeautyMed, Lumiere)
+7. Kalkulator ROI (interaktywny z auto-rekomendacją)
+8. FAQ (8 pytań w accordion)
+9. Kontakt (formularz + dane + booking)
+
+**Jak uruchomić:**
+```bash
+# HTML version (instant)
+open web-app/public/index.html
+
+# React version (requires Node.js)
+cd web-app
+npm install lucide-react
+npm start
+```
+
+**Pełna dokumentacja:**
+- [README.md](web-app/README.md) - Instrukcje uruchomienia
+- [FUNKCJONALNOSC.md](web-app/docs/FUNKCJONALNOSC.md) - Szczegółowa dokumentacja
 
 ---
 
@@ -233,14 +294,27 @@ Dokumenty mogą być używane wyłącznie przez licencjonowanych franczyzobiorc�
 
 ## 🔄 Historia zmian
 
-### v1.0 (26.12.2025)
+### v1.1 (26.12.2025) - 🌐 Web Application
+- ✅ Utworzono aplikację webową MDR Philosophy
+- ✅ Wersja HTML (standalone, instant preview)
+- ✅ Wersja React (zaawansowana z quiz, ROI calc, booking)
+- ✅ 9 sekcji: Hero, O Nas, Usługi, Blog, Quiz, Case Studies, ROI, FAQ, Kontakt
+- ✅ 12 artykułów blogowych (regulations, courses, case studies)
+- ✅ 3 szczegółowe case studies (Estetic, BeautyMed, Lumiere)
+- ✅ Interaktywny kalkulator ROI
+- ✅ System bookingu 3-stepowy
+- ✅ Pełna dokumentacja (FUNKCJONALNOSC.md, README.md)
+- ✅ Responsive design + animacje
+
+### v1.0 (26.12.2025) - 📄 Compliance Documentation
 - ✅ Utworzono KOMPLETNY-KOD-OPERACYJNY.md
 - ✅ Utworzono EXECUTIVE-SUMMARY.md
 - ✅ Dodano szablony: Formularz zgody + Karta kwalifikacji
+- ✅ Dodano projekcje finansowe CSV (2025-2026)
 - ✅ Zaktualizowano README.md
 - ✅ Dodano strukturę compliance-mdr/
 
-### v0.1 (30.11.2025)
+### v0.1 (30.11.2025) - 🏥 Pieczęć IAM POLAND
 - ✅ Utworzono wzór pieczęci szkolnej (IAM POLAND)
 - ✅ Dodano INSTRUKCJA-PIECZEC.md
 - ✅ Dodano wzor-pieczeci.html
