@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDR Philosophy - Compliance MDR dla medycyny estetycznej</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background: #fff;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            border-bottom: 1px solid #e5e5e5;
+            z-index: 100;
+            padding: 24px 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 14px;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #000;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #000;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: #000;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #333;
+        }
+
+        .btn-secondary {
+            background: #fff;
+            color: #000;
+            border: 2px solid #000;
+        }
+
+        .btn-secondary:hover {
+            background: #f5f5f5;
+        }
+
+        .hero-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .stat {
+            border-left: 2px solid #000;
+            padding-left: 16px;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: #f9f9f9;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #666;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 40px;
+            border: 1px solid #e5e5e5;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: #000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .feature-number {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .feature-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .feature-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .service-card {
+            padding: 48px;
+            border: 1px solid #e5e5e5;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            border-color: #000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 24px;
+        }
+
+        .service-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .service-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 16px;
+        }
+
+        .service-price {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .service-period {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 24px;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .service-features li:before {
+            content: "✓ ";
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        /* Case Studies Section */
+        .case-studies {
+            padding: 80px 0;
+            background: #f9f9f9;
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .case-card {
+            background: #fff;
+            padding: 32px;
+            border: 1px solid #e5e5e5;
+            transition: all 0.3s;
+        }
+
+        .case-card:hover {
+            border-color: #000;
+        }
+
+        .case-number {
+            font-size: 12px;
+            font-weight: 700;
+            color: #666;
+            margin-bottom: 16px;
+        }
+
+        .case-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .case-client {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 16px;
+        }
+
+        .case-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            font-size: 12px;
+        }
+
+        .case-stat-label {
+            color: #666;
+        }
+
+        .case-stat-value {
+            font-weight: 600;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: #000;
+            color: #fff;
+        }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .cta-section h2 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            color: #ccc;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .btn-light {
+            background: #fff;
+            color: #000;
+        }
+
+        .btn-light:hover {
+            background: #f0f0f0;
+        }
+
+        .cta-checklist {
+            list-style: none;
+        }
+
+        .cta-checklist li {
+            padding: 12px 0;
+            font-size: 14px;
+        }
+
+        .cta-checklist li:before {
+            content: "✓ ";
+            font-weight: 700;
+            margin-right: 12px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-form {
+            background: #f9f9f9;
+            padding: 48px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e5e5e5;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #000;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-info {
+            padding-top: 48px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .contact-item-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        .contact-item-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .contact-item-text {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .contact-item-text a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .contact-item-text a:hover {
+            color: #000;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid #e5e5e5;
+            padding: 48px 0;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #000;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-grid,
+            .cta-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid,
+            .services-grid,
+            .case-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">MDR PHILOSOPHY</div>
+            <ul class="nav-links">
+                <li><a href="#uslugi">Usługi</a></li>
+                <li><a href="#case-studies">Case Studies</a></li>
+                <li><a href="#o-nas">O Nas</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid fade-in-up">
+                <div>
+                    <h1>Compliance MDR<br/>dla medycyny<br/>estetycznej</h1>
+                    <p>
+                        Kompleksowe doradztwo, szkolenia i technologie blockchain<br/>
+                        dla klinik medycyny estetycznej w zgodzie z MDR 2017/745
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="#kontakt" class="btn btn-primary">Umów konsultację</a>
+                        <a href="#uslugi" class="btn btn-secondary">Zobacz ofertę</a>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-value">60+</div>
+                        <div class="stat-label">Planowanych klinik w sieci</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">100%</div>
+                        <div class="stat-label">Zgodność z MDR 2017/745</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">Blockchain</div>
+                        <div class="stat-label">BLOCKCHAINMEDCONSENT™</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Dlaczego MDR Philosophy?</h2>
+            <p class="section-subtitle">Trzy filary naszego podejścia do compliance</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-number">3 mies.</div>
+                    <div class="feature-title">Szybkie wdrożenie</div>
+                    <div class="feature-description">
+                        Pełna zgodność MDR w 90 dni. Najszybsze wdrożenie na rynku z gwarancją certyfikacji.
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">0 PLN</div>
+                    <div class="feature-title">Uniknięte kary</div>
+                    <div class="feature-description">
+                        Nasi klienci uniknęli kar o łącznej wartości ponad 300 000 PLN w 2024 roku.
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">24/7</div>
+                    <div class="feature-title">Wsparcie premium</div>
+                    <div class="feature-description">
+                        Dedykowany opiekun i priorytetowe wsparcie techniczne przez cały rok.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="uslugi" class="services">
+        <div class="container">
+            <h2 class="section-title">Pakiety wdrożeniowe</h2>
+            <p class="section-subtitle">Wybierz rozwiązanie dopasowane do Twoich potrzeb</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-title">Audyt MDR</div>
+                    <div class="service-description">
+                        Kompleksowy audyt dokumentacji i procesów compliance
+                    </div>
+                    <div class="service-price">5 000 PLN</div>
+                    <div class="service-period">jednorazowo</div>
+                    <ul class="service-features">
+                        <li>Audyt dokumentacji technicznej</li>
+                        <li>Raport z niezgodnościami</li>
+                        <li>Plan działań naprawczych</li>
+                        <li>Konsultacja przeglądowa (2h)</li>
+                        <li>Dostęp do szablonów dokumentów</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" style="border-color: #2563eb; border-width: 2px;">
+                    <div style="color: #2563eb; font-size: 12px; font-weight: 700; margin-bottom: 12px;">REKOMENDOWANY</div>
+                    <div class="service-title">Wdrożenie Standard</div>
+                    <div class="service-description">
+                        Pełne wdrożenie MDR z certyfikacją
+                    </div>
+                    <div class="service-price">30 000 PLN</div>
+                    <div class="service-period">projekt</div>
+                    <ul class="service-features">
+                        <li>Wszystko z pakietu Audyt</li>
+                        <li>Pełna dokumentacja MDR</li>
+                        <li>Wdrożenie procedur QMS</li>
+                        <li>Szkolenie personelu (8h)</li>
+                        <li>BLOCKCHAINMEDCONSENT™</li>
+                        <li>3 miesiące wsparcia</li>
+                        <li>Certyfikat zgodności</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-title">Premium + AI</div>
+                    <div class="service-description">
+                        Najwyższy poziom automatyzacji i wsparcia
+                    </div>
+                    <div class="service-price">50 000 PLN</div>
+                    <div class="service-period">projekt</div>
+                    <ul class="service-features">
+                        <li>Wszystko z pakietu Standard</li>
+                        <li>AI Compliance Engine</li>
+                        <li>Automatyczna walidacja dokumentów</li>
+                        <li>Dedykowany opiekun (12 mies.)</li>
+                        <li>Priorytetowe wsparcie 24/7</li>
+                        <li>Integracja z systemem kliniki</li>
+                        <li>Roczne audyty follow-up (2x)</li>
+                        <li>Dostęp do sieci PMCF</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-title">Model Franchisowy</div>
+                    <div class="service-description">
+                        Gotowa klinika medycyny estetycznej "pod klucz"
+                    </div>
+                    <div class="service-price">150 000 PLN</div>
+                    <div class="service-period">opłata wstępna + 5 000 PLN/mies.</div>
+                    <ul class="service-features">
+                        <li>Pełna dokumentacja MDR</li>
+                        <li>Szablony procedur i procesów</li>
+                        <li>System BLOCKCHAINMEDCONSENT™</li>
+                        <li>Wsparcie prawne i księgowe</li>
+                        <li>Marketing i lead generation</li>
+                        <li>Negocjacje z dostawcami</li>
+                        <li>Dostęp do sieci PMCF</li>
+                        <li>Break-even w 4-6 miesiącu</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="case-studies" class="case-studies">
+        <div class="container">
+            <h2 class="section-title">Case Studies</h2>
+            <p class="section-subtitle">Prawdziwe wdrożenia, konkretne wyniki</p>
+            <div class="case-grid">
+                <div class="case-card">
+                    <div class="case-number">CASE STUDY #1</div>
+                    <div class="case-title">Wdrożenie MDR w sieci 5 klinik - 90 dni</div>
+                    <div class="case-client">Estetic Group - Poznań, Wrocław, Gdańsk</div>
+                    <div class="case-stats">
+                        <div>
+                            <div class="case-stat-label">Timeline</div>
+                            <div class="case-stat-value">90 dni</div>
+                        </div>
+                        <div>
+                            <div class="case-stat-label">Rezultat</div>
+                            <div class="case-stat-value">100% zgodność</div>
+                        </div>
+                        <div>
+                            <div class="case-stat-label">Oszczędności</div>
+                            <div class="case-stat-value">80 000 PLN</div>
+                        </div>
+                        <div>
+                            <div class="case-stat-label">Efektywność</div>
+                            <div class="case-stat-value">-67% czasu</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-number">CASE STUDY #2</div>
+                    <div class="case-title">Audyt MDR wykrył 47 niezgodności - uniknięto kary 80k PLN</div>
+                    <div class="case-client">BeautyMed - Poznań</div>
+                    <div class="case-stats">
+                        <div>
+                            <div class="case-stat-label">Timeline</div>
+                            <div class="case-stat-value">14 dni</div>
+                        </div>
+                        <div>
+                            <div class="case-stat-label">Niezgodności</div>
+                            <div class="case-stat-value">47 znalezionych</div>
+                        </div>
+                        <div>
+                            <div class="case-stat-label">Kary</div>
+                            <div class="case-stat-value">0 PLN</div>
+                        </div>
+                        <div>
+                            <div class="case-stat-label">Ryzyko</div>
+                            <div class="case-stat-value">80 000 PLN</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-number">CASE STUDY #3</div>
+                    <div class="case-title">Franczyza: Otwarcie kliniki w Krakowie - break-even w 4. miesiącu</div>
+                    <div class="case-client">Lumiere Clinic - Kraków (franczyza #001)</div>
+                    <div class="case-stats">
+                        <div>
+                            <div class="case-stat-label">Otwarcie</div>
+                            <div class="case-stat-value">90 dni</div>
+                        </div>
+                        <div>
+                            <div class="case-stat-label">Break-even</div>
+                            <div class="case-stat-value">4. miesiąc</div>
+                        </div>
+                        <div>
+                            <div class="case-stat-label">Przychód (M6)</div>
+                            <div class="case-stat-value">180 000 PLN</div>
+                        </div>
+                        <div>
+                            <div class="case-stat-label">Marża EBITDA</div>
+                            <div class="case-stat-value">38%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-grid">
+                <div>
+                    <h2>Gotowy na pełny compliance?</h2>
+                    <p>
+                        Umów bezpłatną 30-minutową konsultację z naszym ekspertem MDR.<br/>
+                        Ocenimy Twoją sytuację i zaproponujemy optymalne rozwiązanie.
+                    </p>
+                    <a href="#kontakt" class="btn btn-light">Umów bezpłatną konsultację</a>
+                </div>
+                <div>
+                    <ul class="cta-checklist">
+                        <li>Bez zobowiązań</li>
+                        <li>30 minut z ekspertem</li>
+                        <li>Konkretny plan działania</li>
+                        <li>Ocena poziomu compliance</li>
+                        <li>Oszacowanie kosztów i czasu</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontakt" class="contact">
+        <div class="container">
+            <h2 class="section-title">Kontakt</h2>
+            <div class="contact-grid">
+                <div>
+                    <div class="contact-form">
+                        <h3 style="margin-bottom: 24px; font-size: 24px;">Umów konsultację</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Imię i nazwisko *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefon *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="clinic">Nazwa kliniki</label>
+                                <input type="text" id="clinic" name="clinic">
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Rodzaj konsultacji</label>
+                                <select id="service" name="service">
+                                    <option value="audit">Audyt MDR (bezpłatna)</option>
+                                    <option value="implementation">Konsultacja wdrożeniowa</option>
+                                    <option value="training">Demo szkolenia</option>
+                                    <option value="franchise">Prezentacja franczyzy</option>
+                                    <option value="pmcf">Konsultacja PMCF</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Wiadomość</label>
+                                <textarea id="message" name="message"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Wyślij zapytanie</button>
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <div class="contact-info">
+                        <h3 style="margin-bottom: 32px; font-size: 24px;">Dane kontaktowe</h3>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">📧</div>
+                            <div>
+                                <div class="contact-item-title">Email</div>
+                                <div class="contact-item-text">
+                                    <a href="mailto:compliance@mdrcosmomed.pl">compliance@mdrcosmomed.pl</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">📞</div>
+                            <div>
+                                <div class="contact-item-title">Telefon</div>
+                                <div class="contact-item-text">
+                                    <a href="tel:+48222222222">+48 22 222 22 22</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">📍</div>
+                            <div>
+                                <div class="contact-item-title">Adres</div>
+                                <div class="contact-item-text">
+                                    MDR Philosophy P.S.A.<br/>
+                                    ul. Przykładowa 123<br/>
+                                    00-001 Warszawa
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">🕐</div>
+                            <div>
+                                <div class="contact-item-title">Godziny pracy</div>
+                                <div class="contact-item-text">
+                                    Pon - Pt: 9:00 - 17:00<br/>
+                                    Sob - Ndz: Zamknięte
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>© 2024 MDR Philosophy P.S.A. Wszelkie prawa zastrzeżone.</div>
+                <div class="footer-links">
+                    <a href="#">Polityka prywatności</a>
+                    <a href="#">Regulamin</a>
+                    <a href="#">RODO</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Dziękujemy za wysłanie formularza! Skontaktujemy się z Tobą w ciągu 24h.');
+            this.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .service-card, .case-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
